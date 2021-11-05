@@ -1,4 +1,3 @@
-import './App.css';
 import './assets/scss/Base.css'
 
 function App() {
