@@ -8,6 +8,7 @@ import './App.css'
 import NavBar from "./components/NavBar"
 import Home from "./components/Home"
 import User from "./components/User"
+import './assets/scss/Base.css'
 
 function App() {
   return (
