@@ -15,15 +15,14 @@ export default function App() {
           <NavBar/>
           <Switch>
             <Route exact path="/">
-              <Home />
+                <Home />
             </Route>
             <Route path="/user">
-              <User />
+                <User />
             </Route>
-              <Route path="/bitcoin">
-                  <Bitcoin />
-              </Route>
-
+            <Route path="/bitcoin">
+                <Bitcoin />
+            </Route>
           </Switch>
       </Router>
   )

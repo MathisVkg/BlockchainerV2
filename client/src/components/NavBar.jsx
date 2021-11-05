@@ -8,15 +8,15 @@ const NavBar = () => {
     return (
         <div>
             <span className="openIcon"><GiHamburgerMenu/></span>
-            <nav class="navBar">
-                <span class="backIcon"><FaAngleLeft /></span>
+            <nav className="navBar">
+                <span className="backIcon"><FaAngleLeft /></span>
                 <NavLink to='/'>DashBoard</NavLink>
                 <NavLink to='/favorite'>Favorite</NavLink>
                 <NavLink to='/compare'>Compare</NavLink>
-                <div class="menuCrypto">
+                <div className="menuCrypto">
                     <div className="menuGroup">
-                        <p class="menuText">Crypto</p>
-                        <span class="menuIcon"><IoMdArrowDropright /></span>
+                        <p className="menuText">Crypto</p>
+                        <span className="menuIcon"><IoMdArrowDropright /></span>
                     </div>
                     <NavLink to='/bitcoin'>Bitcoin</NavLink>
                     <NavLink to='/ethereum'>Ethereum</NavLink>
