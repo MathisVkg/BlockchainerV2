@@ -11,20 +11,20 @@ const NavBar = () => {
             <nav class="navBar">
                 <span class="backIcon"><FaAngleLeft /></span>
                 <NavLink to='/'>DashBoard</NavLink>
-                <NavLink to='#'>Favorite</NavLink>
-                <NavLink to='#'>Compare</NavLink>
+                <NavLink to='/favorite'>Favorite</NavLink>
+                <NavLink to='/compare'>Compare</NavLink>
                 <div class="menuCrypto">
                     <div className="menuGroup">
                         <p class="menuText">Crypto</p>
                         <span class="menuIcon"><IoMdArrowDropright /></span>
                     </div>
-                    <NavLink to='#'>Bitcoin</NavLink>
-                    <NavLink to='#'>Ethereum</NavLink>
-                    <NavLink to='#'>XRP</NavLink>
-                    <NavLink to='#'>Cake</NavLink>
-                    <NavLink to='#'>Shiba</NavLink>
+                    <NavLink to='/bitcoin'>Bitcoin</NavLink>
+                    <NavLink to='/ethereum'>Ethereum</NavLink>
+                    <NavLink to='/xrp'>XRP</NavLink>
+                    <NavLink to='/cake'>Cake</NavLink>
+                    <NavLink to='/shiba'>Shiba</NavLink>
                 </div>
-                <NavLink to='#'>User</NavLink>
+                <NavLink to='/user'>User</NavLink>
             </nav>
         </div>
     )
