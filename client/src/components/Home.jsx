@@ -6,16 +6,18 @@ import Loader from './Loader'
 const Home = () => {
     const [data, setData] = useState([])
     const [conv, setConv] = useState([])
+    const [limitRender, setLimitRender] = useState(100)
 
     useEffect(async () => {
         await axios.get("http://localhost:3001/data").then((resp) => {
+            // console.log(resp)
             setData(resp.data)
         })
-        await axios.get("http://localhost:3001/data/convert").then((resp) => {
-            setConv(resp.data)
-        })
+        // await axios.get("http://localhost:3001/data/convert").then((resp) => {
+        //     setConv(resp.data)
+        // })
     },[])
-            console.log(conv)
+            console.log(data)
 
     if(data.length === 0) {
         return (
@@ -28,16 +30,23 @@ const Home = () => {
         </div>
     )
 
+        // window.onscroll = function(ev) {
+        //     if((window.innerHeight + window.scrollY) > document.body.offsetHeight) {
+        //         console.log('cjheck')
+        //         setLimitRender( prev => prev + 100)
+        //     }
+        // }
+
     function MapCrypto() {
         return(
             <div className="containerCrypto">
                 {
-                    data.map(crypto => {
+                    data.coins.map(crypto => {
                         return(
                             <div className="card" key={ crypto.id }>
                                 <p>{ crypto.name }</p>
-                                <p>{ crypto.quote.USD.percent_change_24h.toFixed(2) + '%' }</p>
-                                <p>{ new Intl.NumberFormat().format(crypto.quote.USD.price)}</p>
+                                <p>{ crypto.priceChange1d + '%' }</p>
+                                <p>{ new Intl.NumberFormat().format(crypto.price)}</p>
                             </div>
                         )
                     })
