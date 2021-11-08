@@ -1,19 +1,15 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import axios from "axios";
 
 const Home = () => {
-    function fetch() {
-        axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?X-CMC_PRO_API_KEY=42501420-56b2-4d9d-862f-d46a4bcf6dac', {
-            headers: { 'X-CMC_PRO_API_KEY': '42501420-56b2-4d9d-862f-d46a4bcf6dac' }
-        })
-            .then(res => {
-                console.log(res)
-            });
-    }
+    const [data, setData] = useState([])
 
     useEffect(() => {
-        fetch()
-    }, [])
+        axios.get("http://localhost:3001/data").then((resp) => {
+            setData(resp)
+            console.log(resp)
+        })
+    },[])
 
     return (
         <div>
