@@ -3,13 +3,20 @@ const express = require("express");
 const router = express.Router()
 
 
-router.post('/', function (req, res) {
-    axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
+router.get('/', async function (req, res) {
+    const result = await axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
+        qs: {
+            'start': '1',
+            'limit': '1000',
+            'convert': 'EUR'
+        },
         headers: { 'X-CMC_PRO_API_KEY': '42501420-56b2-4d9d-862f-d46a4bcf6dac' },
     })
-        .then(function (response) {
-            res.json(response.data.data);
-        })
+    return res.json(result.data.data);
+
+    // .then(function (response) {
+        //     res.json(response.data.data);
+        // })
 })
 
 module.exports = router

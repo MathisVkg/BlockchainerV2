@@ -37,7 +37,7 @@ const NavBar = () => {
                     <div className="gold">
                         <div className="black">
                             <span className="backIcon"><FaAngleLeft onClick={ () => { closeMenu() } }/></span>
-                            <NavLink className="dashBoard" to='/Home' ref={ navBar }>Home</NavLink>
+                            <NavLink className="dashBoard" to='/' ref={ navBar }>Home</NavLink>
                             <NavLink to='/markets'>Markets</NavLink>
                             <NavLink to='/traed'>Trade</NavLink>
                             <NavLink to='/wallets'>Wallets</NavLink>
@@ -52,8 +52,8 @@ const NavBar = () => {
     function NavMobile() {
         return (
             <div>
-                <nav class="navBarMobile">
-                    <NavLink to='/Home'>
+                <nav className="navBarMobile">
+                    <NavLink to='/'>
                         <div className="group">
                             <span className="navIcon"><FaFreebsd /></span>
                             <p>Home</p>

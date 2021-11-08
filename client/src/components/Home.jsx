@@ -4,12 +4,12 @@ import axios from "axios";
 const Home = () => {
     const [data, setData] = useState([])
 
-    useEffect(() => {
-        axios.get("http://localhost:3001/data").then((resp) => {
-            setData(resp)
-            console.log(resp)
+    useEffect(async () => {
+        await axios.get("http://localhost:3001/data").then((resp) => {
+            setData(resp.data)
         })
     },[])
+            console.log(data)
 
     return (
         <div>
