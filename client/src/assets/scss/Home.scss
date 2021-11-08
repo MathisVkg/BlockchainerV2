@@ -1,0 +1,11 @@
+
+
+.containerCrypto {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    .card {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

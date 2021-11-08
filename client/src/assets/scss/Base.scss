@@ -4,7 +4,11 @@
 body {
     margin: 0;
     font-family: 'Nunito', sans-serif;
+    background-color: #1d1d1d;
 }
+
+
+//NAV
 
 .navOn {
     transform: translateX(0);
@@ -79,7 +83,7 @@ body {
     margin: 0 auto;
     position: fixed;
     bottom: 0;
-    background-color: #1d1d1d;
+    background-color: #292929;
     padding-top: 12px;
     padding-bottom: 13px;
     a {
@@ -105,6 +109,47 @@ body {
 
 .active {
     color: #dd3a1d;
+}
+
+
+
+//LOADER
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70%;
+    color: white;
+
+    animation-name: bounce;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    h2 {
+        font-size: 2.5em;
+        margin-top: 0;
+    }
+    .lds-dual-ring {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        border-color: #fff transparent #fff transparent;
+        animation: lds-dual-ring 3s linear infinite;
+      }
+}
+
+@keyframes lds-dual-ring {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @media only screen and (max-width: 500px) {
