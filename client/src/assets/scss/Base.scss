@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&display=swap');
 
+
 body {
     margin: 0;
     font-family: 'Nunito', sans-serif;
@@ -10,6 +11,10 @@ body {
 }
 .navOff {
     transform: translateX(-120%);
+}
+
+.navBarMobile {
+    display: none;
 }
 
 .openIcon {
@@ -66,5 +71,51 @@ body {
         &:hover {
             background-color: #dd3a1d;
         }
+    }
+}
+
+.navBarMobile {
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 0;
+    background-color: #1d1d1d;
+    padding-top: 12px;
+    padding-bottom: 13px;
+    a {
+        text-decoration: none;
+    }
+    .group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 10px;
+        text-decoration: none;
+        color: white;
+        .navIcon {
+            font-size: 1.2em;
+            margin-bottom: 0;
+        }
+        p {
+            font-size: 1em;
+            margin-top: -5px;
+        }
+    }
+}
+
+.active {
+    color: #dd3a1d;
+}
+
+@media only screen and (max-width: 500px) {
+    .openIcon {
+        display: none;
+    }
+    .navBar {
+        display: none;
+    }
+    .navBarMobile {
+        display: flex;
+        justify-content: center;
     }
 }
