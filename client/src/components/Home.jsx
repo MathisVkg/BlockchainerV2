@@ -58,7 +58,8 @@ const Home = () => {
                                     { getColorChangePrice(crypto) }
                                 </div>
                                 <div className="price">
-                                    <p>{ new Intl.NumberFormat().format(crypto.price)}</p>
+                                    {/* <p>{ new Intl.NumberFormat().format(crypto.price)}</p> */}
+                                    { getColorPrice(crypto) }
                                 </div>
                             </div>
                         )
@@ -83,6 +84,14 @@ const Home = () => {
                     <p className="changePriceRed">{ crypto.priceChange1d + '%' }</p>
                 </>
             )
+        }
+    }
+
+    function getColorPrice(crypto) {
+        if(crypto.priceChange1d > 0) {
+            return <p className="priceGreen">{ new Intl.NumberFormat().format(crypto.price)}</p>
+        } else {
+            return <p className="priceRed">{ new Intl.NumberFormat().format(crypto.price)}</p>
         }
     }
 }

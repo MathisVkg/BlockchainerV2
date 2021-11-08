@@ -8,6 +8,7 @@
           flex-direction: column;
   color: white;
   margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 .containerCrypto .card {
@@ -17,12 +18,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #1d1d1d;
+  margin: 5px 0;
 }
 
 .containerCrypto .card .rank {
   width: 15px;
-  margin-left: 20px;
+  margin-left: 12px;
   text-align: end;
 }
 
@@ -34,7 +35,7 @@
 .containerCrypto .card .img {
   width: 35px;
   margin-top: 5px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .containerCrypto .card .img img {
@@ -42,11 +43,13 @@
 }
 
 .containerCrypto .card .name {
-  width: 120px;
+  width: 90px;
   font-size: 0.9em;
+  overflow: hidden;
 }
 
 .containerCrypto .card .changePrice {
+  margin-left: 15px;
   width: 85px;
   font-size: 0.9em;
   display: -webkit-box;
@@ -81,5 +84,15 @@
 
 .containerCrypto .card .price {
   font-size: 0.9em;
+  text-align: end;
+  width: 80px;
+}
+
+.containerCrypto .card .price .priceGreen {
+  color: #20ad27;
+}
+
+.containerCrypto .card .price .priceRed {
+  color: #ce2626;
 }
 /*# sourceMappingURL=Home.css.map */

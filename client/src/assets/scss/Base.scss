@@ -4,6 +4,7 @@
 body {
     margin: 0;
     font-family: 'Nunito', sans-serif;
+    background-color: #1d1d1d;
 }
 
 
@@ -78,6 +79,7 @@ body {
 }
 
 .navBarMobile {
+    z-index: 1;
     width: 100%;
     margin: 0 auto;
     position: fixed;
@@ -116,6 +118,7 @@ body {
 
 .loader {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 70%;
@@ -130,8 +133,6 @@ body {
     }
     .lds-dual-ring {
         display: inline-block;
-        width: 80px;
-        height: 80px;
       }
       .lds-dual-ring:after {
         content: " ";
