@@ -4,8 +4,57 @@
     display: flex;
     flex-direction: column;
     color: white;
+    margin-top: 20px;
     .card {
         display: flex;
-        justify-content: space-evenly;
+        align-items: center;
+        background-color: #1d1d1d;
+        .rank {
+            width: 15px;
+            margin-left: 20px;
+            text-align: end;
+            p {
+                font-size: 0.8em;
+                color: #5c5c5c;
+            }
+        }
+        .img {
+            width: 35px;
+            margin-top: 5px;
+            margin-left: 10px;
+            img {
+                width: 25px;
+            }
+        }
+        .name {
+            width: 120px;
+            font-size: 0.9em;
+        }
+        .changePrice {
+            width: 85px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            .changePriceGreen {
+                color: #20ad27;
+            }
+            .triangleIconGreen {
+                margin-right: 5px;
+                font-size: 0.5em;
+                color: #20ad27;
+            }
+            .changePriceRed {
+                color: #ce2626;
+            }
+            .triangleIconRed {
+                margin-right: 5px;
+                font-size: 0.5em;
+                color: #ce2626;
+                transform: rotate(180deg);
+            }
+        }
+        .price {
+            font-size: 0.9em;
+        }
     }
 }

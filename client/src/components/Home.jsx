@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import axios from "axios"
 import './../assets/scss/Home.css'
 import Loader from './Loader'
+import { BsFillTriangleFill } from 'react-icons/bs'
 
 const Home = () => {
     const [data, setData] = useState([])
@@ -44,15 +45,45 @@ const Home = () => {
                     data.coins.map(crypto => {
                         return(
                             <div className="card" key={ crypto.id }>
-                                <p>{ crypto.name }</p>
-                                <p>{ crypto.priceChange1d + '%' }</p>
-                                <p>{ new Intl.NumberFormat().format(crypto.price)}</p>
+                                <div className="rank">
+                                    <p>{ crypto.rank}</p>
+                                </div>
+                                <div className="img">
+                                    <img src={ crypto.icon } alt={ crypto.name } />
+                                </div>
+                                <div className="name">
+                                    <p>{ crypto.name }</p>
+                                </div>
+                                <div className="changePrice">
+                                    { getColorChangePrice(crypto) }
+                                </div>
+                                <div className="price">
+                                    <p>{ new Intl.NumberFormat().format(crypto.price)}</p>
+                                </div>
                             </div>
                         )
                     })
                 }
             </div>
         )
+    }
+
+    function getColorChangePrice(crypto) {
+        if(crypto.priceChange1d > 0) {
+            return (
+                <>
+                    <span className="triangleIconGreen"><BsFillTriangleFill /></span>
+                    <p className="changePriceGreen">{ crypto.priceChange1d + '%' }</p>
+                </>
+            )
+        } else {
+            return (
+                <>
+                   <span className="triangleIconRed"><BsFillTriangleFill /></span>
+                    <p className="changePriceRed">{ crypto.priceChange1d + '%' }</p>
+                </>
+            )
+        }
     }
 }
 
