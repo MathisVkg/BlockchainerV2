@@ -49,7 +49,7 @@ body {
     a {
         text-decoration: none;
         color: white;
-        margin-left: 35px;
+        text-transform: uppercase;
     }
     .backIcon {
         position: fixed;
@@ -59,6 +59,7 @@ body {
         font-size: 1.4em;
     }
     .square {
+        text-align: center;
         transition: 0.4s ease-in-out;
         background-color: #292929;
         padding: 48px;
