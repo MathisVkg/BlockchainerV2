@@ -88,6 +88,13 @@ const Home = () => {
     }
 
     function getColorPrice(crypto) {
+        if(crypto.price < 10) {
+            if(crypto.priceChange1d > 0) {
+                return <p className="priceGreen">{ crypto.price.toFixed(8)}</p>
+            } else {
+                return <p className="priceRed">{ crypto.price.toFixed(8)}</p>
+            }
+        }
         if(crypto.priceChange1d > 0) {
             return <p className="priceGreen">{ new Intl.NumberFormat().format(crypto.price)}</p>
         } else {

@@ -9,8 +9,12 @@ import { IoWalletSharp } from 'react-icons/io5'
 import { FaUser } from 'react-icons/fa'
 
 const NavBar = () => {
-    const navBar = useRef(null)
-    const navTest = useRef(null)
+    const square1 = useRef(null)
+    const square2 = useRef(null)
+    const square3 = useRef(null)
+    const square4 = useRef(null)
+    const square5 = useRef(null)
+    const iconOpen = useRef(null)
     return (
         <>
             <NavDesktop />
@@ -19,30 +23,66 @@ const NavBar = () => {
     )
     
     function openMenu() {
-        navBar.current.classList.remove('navOff')
-        navBar.current.classList.add('navOn')
+        square1.current.classList.remove('navOff')
+        square1.current.classList.add('navOn')
+
+        square2.current.classList.remove('navOff')
+        square2.current.classList.add('navOn')
+
+        square3.current.classList.remove('navOff')
+        square3.current.classList.add('navOn')
+
+        square4.current.classList.remove('navOff')
+        square4.current.classList.add('navOn')
+
+        square5.current.classList.remove('navOff')
+        square5.current.classList.add('navOn')
+
+        iconOpen.current.classList.remove('openIcon')
+        iconOpen.current.classList.add('removeIcon')
     }
 
     function closeMenu() {
-        navBar.current.classList.remove('navOn')
-        navBar.current.classList.add('navOff')
+        square1.current.classList.remove('navOn')
+        square1.current.classList.add('navOff')
+
+        square2.current.classList.remove('navOn')
+        square2.current.classList.add('navOff')
+
+        square3.current.classList.remove('navOn')
+        square3.current.classList.add('navOff')
+
+        square4.current.classList.remove('navOn')
+        square4.current.classList.add('navOff')
+
+        square5.current.classList.remove('navOn')
+        square5.current.classList.add('navOff')
+
+        iconOpen.current.classList.remove('removeIcon')
+        iconOpen.current.classList.add('openIcon')
     }
     
 
     function NavDesktop() {
         return (
             <div>
-                <span className="openIcon"><GiHamburgerMenu onClick={ () => { openMenu() } }/></span>
-                <nav className="navBar navOff" ref={ navBar }>
-                    <div className="gold">
-                        <div className="black">
-                            <span className="backIcon"><FaAngleLeft onClick={ () => { closeMenu() } }/></span>
-                            <NavLink className="dashBoard" to='/' ref={ navBar }>Home</NavLink>
-                            <NavLink to='/markets'>Markets</NavLink>
-                            <NavLink to='/traed'>Trade</NavLink>
-                            <NavLink to='/wallets'>Wallets</NavLink>
-                            <NavLink to='/user'>User</NavLink>
-                        </div>
+                <span className="openIcon" ref={ iconOpen }><GiHamburgerMenu onClick={ () => { openMenu() } }/></span>
+                <nav className="navBar">
+                    <div className="square navOff" ref={ square1 }>
+                        <span className="backIcon"><FaAngleLeft onClick={ () => { closeMenu() } }/></span>
+                        <NavLink to="/">Home</NavLink>
+                    </div>
+                    <div className="square Two navOff" ref={ square2 }>
+                        <NavLink to="/markets">Markets</NavLink>
+                    </div>
+                    <div className="square Three navOff" ref={ square3 }>
+                        <NavLink to="/trade">Trade</NavLink>
+                    </div>
+                    <div className="square Four navOff" ref={ square4 }>
+                        <NavLink to="/wallets">Wallets</NavLink>
+                    </div>
+                    <div className="square Five navOff" ref={ square5 }>
+                        <NavLink to="/user">User</NavLink>
                     </div>
                 </nav>
             </div>
