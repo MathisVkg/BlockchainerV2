@@ -12,14 +12,12 @@ const Home = () => {
 
     useEffect(async () => {
         await axios.get("http://localhost:3001/data").then((resp) => {
-            // console.log(resp)
             setData(resp.data)
         })
         // await axios.get("http://localhost:3001/data/convert").then((resp) => {
         //     setConv(resp.data)
         // })
     },[])
-            console.log(data)
 
     if(data.length === 0) {
         return (
