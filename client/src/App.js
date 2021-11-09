@@ -6,6 +6,7 @@ import {
 import NavBar from "./components/NavBar"
 import Home from "./components/Home"
 import User from "./components/User"
+import Details from "./components/pages/Details"
 import './assets/scss/Base.css'
 import Bitcoin from "./components/pages/Bitcoin";
 import SignUp from "./components/pages/SignUp";
@@ -26,6 +27,9 @@ export default function App() {
             </Route>
             <Route path="/sign-up">
                 <SignUp />
+            </Route>
+            <Route path="/Details/:cryptoid">
+                <Details />
             </Route>
           </Switch>
       </Router>

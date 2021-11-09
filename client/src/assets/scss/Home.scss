@@ -1,11 +1,75 @@
-
+.cardLink { 
+    text-decoration: none;
+    color: white; 
+}
 
 .containerCrypto {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     color: white;
+    margin-top: 20px;
+    margin-bottom: 100px;
     .card {
         display: flex;
-        justify-content: space-evenly;
+        align-items: center;
+        margin: 5px 0;
+        .rank {
+            width: 15px;
+            margin-left: 12px;
+            text-align: end;
+            p {
+                font-size: 0.8em;
+                color: #5c5c5c;
+            }
+        }
+        .img {
+            width: 35px;
+            margin-top: 5px;
+            margin-left: 20px;
+            img {
+                width: 25px;
+            }
+        }
+        .name {
+            width: 90px;
+            font-size: 0.9em;
+            overflow: hidden;
+        }
+        .changePrice {
+            margin-left: 15px;
+            width: 85px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            .changePriceGreen {
+                color: #20ad27;
+            }
+            .triangleIconGreen {
+                margin-right: 5px;
+                font-size: 0.5em;
+                color: #20ad27;
+            }
+            .changePriceRed {
+                color: #ce2626;
+            }
+            .triangleIconRed {
+                margin-right: 5px;
+                font-size: 0.5em;
+                color: #ce2626;
+                transform: rotate(180deg);
+            }
+        }
+        .price {
+            font-size: 0.9em;
+            text-align: end;
+            width: 80px;
+            .priceGreen {
+                color: #20ad27;
+            }
+            .priceRed {
+                color: #ce2626;
+            }
+        }
     }
 }
