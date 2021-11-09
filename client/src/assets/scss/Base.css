@@ -132,10 +132,6 @@ body {
   margin-top: -2px;
 }
 
-.active {
-  color: #dd3a1d;
-}
-
 .loader {
   display: -webkit-box;
   display: -ms-flexbox;

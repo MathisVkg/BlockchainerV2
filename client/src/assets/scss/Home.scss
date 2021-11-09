@@ -1,6 +1,10 @@
-
+.cardLink { 
+    text-decoration: none;
+    color: white; 
+}
 
 .containerCrypto {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     color: white;

@@ -3,6 +3,7 @@ import axios from "axios"
 import './../assets/scss/Home.css'
 import Loader from './Loader'
 import { BsFillTriangleFill } from 'react-icons/bs'
+import { NavLink } from 'react-router-dom'
 
 const Home = () => {
     const [data, setData] = useState([])
@@ -44,7 +45,8 @@ const Home = () => {
                 {
                     data.coins.map(crypto => {
                         return(
-                            <div className="card" key={ crypto.id }>
+                            <NavLink to={`/detail/${ crypto.id }`} className="cardLink" key={ crypto.id } id={ crypto.id } >
+                            <div className="card">
                                 <div className="rank">
                                     <p>{ crypto.rank}</p>
                                 </div>
@@ -58,10 +60,10 @@ const Home = () => {
                                     { getColorChangePrice(crypto) }
                                 </div>
                                 <div className="price">
-                                    {/* <p>{ new Intl.NumberFormat().format(crypto.price)}</p> */}
                                     { getColorPrice(crypto) }
                                 </div>
                             </div>
+                            </NavLink>
                         )
                     })
                 }

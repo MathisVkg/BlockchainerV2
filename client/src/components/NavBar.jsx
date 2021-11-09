@@ -70,19 +70,19 @@ const NavBar = () => {
                 <nav className="navBar">
                     <div className="square navOff" ref={ square1 }>
                         <span className="backIcon"><FaAngleLeft onClick={ () => { closeMenu() } }/></span>
-                        <NavLink to="/">Home</NavLink>
+                        <NavLink to="/" onClick={ () => { closeMenu() } }>Home</NavLink>
                     </div>
                     <div className="square Two navOff" ref={ square2 }>
-                        <NavLink to="/markets">Markets</NavLink>
+                        <NavLink to="/markets" onClick={ () => { closeMenu() } }>Markets</NavLink>
                     </div>
                     <div className="square Three navOff" ref={ square3 }>
-                        <NavLink to="/trade">Trade</NavLink>
+                        <NavLink to="/trade" onClick={ () => { closeMenu() } }>Trade</NavLink>
                     </div>
                     <div className="square Four navOff" ref={ square4 }>
-                        <NavLink to="/wallets">Wallets</NavLink>
+                        <NavLink to="/wallets" onClick={ () => { closeMenu() } }>Wallets</NavLink>
                     </div>
                     <div className="square Five navOff" ref={ square5 }>
-                        <NavLink to="/user">User</NavLink>
+                        <NavLink to="/user" onClick={ () => { closeMenu() } }>User</NavLink>
                     </div>
                 </nav>
             </div>
