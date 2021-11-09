@@ -8,6 +8,7 @@ import Home from "./components/Home"
 import User from "./components/User"
 import './assets/scss/Base.css'
 import Bitcoin from "./components/pages/Bitcoin";
+import SignUp from "./components/pages/SignUp";
 
 export default function App() {
   return (
@@ -22,6 +23,9 @@ export default function App() {
             </Route>
             <Route path="/bitcoin">
                 <Bitcoin />
+            </Route>
+            <Route path="/sign-up">
+                <SignUp />
             </Route>
           </Switch>
       </Router>

@@ -5,14 +5,19 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon db.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.24.0",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "nodemon": "^2.0.14"
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.1.4",
+    "nodemon": "^2.0.14",
+    "sanitize-html": "^2.5.3",
+    "socket.io": "^4.3.2"
   }
 }

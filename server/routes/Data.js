@@ -26,6 +26,11 @@ router.get('/', async function (req, res) {
     return res.send(JSON.stringify(result.data))
 })
 
+router.post('/register', async function (req, res) {
+    const data = req.body
+    console.log(data)
+})
+
 // router.get('/convert', async function (req, res) {
 //     const result = await axios.get('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?amount=1', {
 //         value: [1,27],
