@@ -28,7 +28,7 @@ export default function App() {
             <Route path="/sign-up">
                 <SignUp />
             </Route>
-            <Route path="/Details/:cryptoid">
+            <Route path="/details/:cryptoid">
                 <Details />
             </Route>
           </Switch>

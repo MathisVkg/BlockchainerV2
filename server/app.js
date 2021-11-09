@@ -12,4 +12,7 @@ app.use(cors())
 const dataRouter = require('./routes/Data')
 app.use('/data', dataRouter)
 
+const detailsRouter = require('./routes/Detail')
+app.use('/details', detailsRouter)
+
 app.listen(process.env.PORT)
