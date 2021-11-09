@@ -1,0 +1,85 @@
+
+
+.error {
+    display: none;
+}
+
+.containerOne {
+    padding-top: 45px;
+    padding-bottom: 25px;
+    background-color: #FFDF00;
+    .icon {
+        font-size: 5em;
+        margin-left: 25px;
+    }
+    .title {
+        margin-top: 0;
+        margin-left: 25px;
+        font-size: 1.3em;
+    }
+    .des {
+        margin-left: 25px;
+        font-size: 1.1em;
+        margin-bottom: 5px;
+        width: 300px;
+    }
+    .des2 {
+        margin-left: 25px;
+        font-size: 1.1em;
+        margin-top: 0;
+    }
+}
+
+.already {
+    margin-left: 25px;
+    color: white;
+    .alreadySpan {
+        text-decoration: none;
+        color: #FFDF00;
+        margin-left: 15px;
+    }   
+}
+
+.formSign {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-left: 25px;
+    margin-top: 15px;
+    .group {
+        display: flex;
+        flex-direction: column;
+        .label {
+            position: relative;
+            top: 10px;
+            left: 15px;
+            font-size: 1.1em;
+            background-color: #1d1d1d;
+            padding: 0 5px;
+        }
+        .username {
+            width: 82px;
+        }
+        .email {
+            width: 46px;
+        }
+        .password {
+            width: 80px;
+        }
+        input {
+            border: 1px solid white;
+            padding: 15px 30px;
+            border-radius: 4px;
+            background-color: unset;
+        }
+    }
+    .submit {
+        width: 120px;
+        border-radius: 4px;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 15px;
+        color: #1d1d1d;
+    }
+}
