@@ -32,6 +32,11 @@ body {
     top: 0;
     left: 0;
     z-index: 20;
+    a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
 }
 
 
@@ -56,11 +61,11 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
-}
-a {
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
+    a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
 }
 .backIcon {
     position: fixed;
@@ -105,6 +110,7 @@ a {
     padding-bottom: 13px;
     a {
         text-decoration: none;
+        color: white;
     }
     .group {
         display: flex;

@@ -36,6 +36,12 @@ body {
   z-index: 20;
 }
 
+.showNav a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
 .navBarMobile {
   display: none;
 }
@@ -60,7 +66,7 @@ body {
   z-index: -1;
 }
 
-a {
+.navBar a {
   text-decoration: none;
   color: white;
   text-transform: uppercase;
@@ -121,6 +127,7 @@ a {
 
 .navBarMobile a {
   text-decoration: none;
+  color: white;
 }
 
 .navBarMobile .group {
