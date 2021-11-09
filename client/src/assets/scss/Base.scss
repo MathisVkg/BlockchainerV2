@@ -11,6 +11,7 @@ body {
 //NAV
 .navOn {
     transform: translateX(0);
+    z-index: 20;
 }
 .navOff {
     transform: translateX(-100%);
@@ -22,6 +23,20 @@ body {
     right: 20px;
     color: white;
     font-size: 1.4em;
+}
+.showNav {
+    transition: 0.4s ease-in-out;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
 }
 
 
@@ -39,45 +54,50 @@ body {
 }
 
 .navBar {
-    z-index: 20;
     transition: 0.4s ease-in-out;
     position: fixed;
     width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
+    z-index: -1;
     a {
         text-decoration: none;
         color: white;
         text-transform: uppercase;
     }
-    .backIcon {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        color: white;
-        font-size: 1.4em;
-    }
-    .square {
-        text-align: center;
-        transition: 0.4s ease-in-out;
-        background-color: #292929;
-        padding: 48px;
-        font-size: 1.5em;
-    }
-    .Two {
-        transition-delay: 0.1s;
-    }
-    .Three {
-        transition-delay: 0.2s;
-    }
-    .Four {
-        transition-delay: 0.3s;
-    }
-    .Five {
-        transition-delay: 0.4s;
+}
+.backIcon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 1.4em;
+}
+.square {
+    text-align: center;
+    transition: 0.4s ease-in-out;
+    background-color: #292929;
+    padding: 48px;
+    font-size: 1.5em;
+    transition: 0.4s ease-in-out;
+    &:hover {
+        background-color: #3a3a3a;
     }
 }
+.Two {
+    transition-delay: 0.1s;
+}
+.Three {
+    transition-delay: 0.2s;
+}
+.Four {
+    transition-delay: 0.3s;
+}
+.Five {
+    transition-delay: 0.4s;
+}
+
 
 .navBarMobile {
     z-index: 1;
@@ -90,6 +110,7 @@ body {
     padding-bottom: 13px;
     a {
         text-decoration: none;
+        color: white;
     }
     .group {
         display: flex;

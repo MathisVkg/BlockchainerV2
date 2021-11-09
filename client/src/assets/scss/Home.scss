@@ -1,6 +1,10 @@
 .cardLink { 
     text-decoration: none;
     color: white; 
+    transition: 0.4s ease-in-out;
+    &:hover {
+        background-color: #3a3a3a;
+    }
 }
 
 .containerCrypto {
