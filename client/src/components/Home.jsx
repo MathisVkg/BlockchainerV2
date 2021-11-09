@@ -45,7 +45,7 @@ const Home = () => {
                 {
                     data.coins.map(crypto => {
                         return(
-                            <NavLink to={`/detail/${ crypto.id }`} className="cardLink" key={ crypto.id } id={ crypto.id } >
+                            <NavLink to={`/details/${ crypto.id }`} className="cardLink" key={ crypto.id } id={ crypto.id } >
                             <div className="card">
                                 <div className="rank">
                                     <p>{ crypto.rank}</p>
