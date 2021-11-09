@@ -89,6 +89,7 @@
 }
 
 .formSign .group input {
+  color: white;
   border: 1px solid white;
   padding: 15px 30px;
   border-radius: 4px;
