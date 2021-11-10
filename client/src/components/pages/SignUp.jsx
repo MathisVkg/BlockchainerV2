@@ -34,8 +34,8 @@ export default function SignUp() {
         return (
             <div className="containerOne">
                 <span className="icon"><FaFreebsd /></span>
-                <p className="title">Create your account now on Blockchainer</p>
-                <p className="des">The best app for see all cryptocurrencies and more</p>
+                <p className="title">Create your account now on Blockchainer.</p>
+                <p className="des">The best app for see all cryptocurrencies.</p>
                 <p className="des2">Check your wallets and more !</p>
             </div>
         )

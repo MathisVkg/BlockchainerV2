@@ -1,25 +1,20 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import axios from "axios"
 import './../assets/scss/Home.css'
 import Loader from './Loader'
 import { BsFillTriangleFill } from 'react-icons/bs'
 import { NavLink } from 'react-router-dom'
+import { BiSearch } from 'react-icons/bi'
 
 const Home = () => {
     const [data, setData] = useState([])
-    const [conv, setConv] = useState([])
-    const [limitRender, setLimitRender] = useState(100)
+    const searchBar = useRef(null)
 
     useEffect(async () => {
         await axios.get("http://localhost:3001/data").then((resp) => {
-            // console.log(resp)
             setData(resp.data)
         })
-        // await axios.get("http://localhost:3001/data/convert").then((resp) => {
-        //     setConv(resp.data)
-        // })
     },[])
-            console.log(data)
 
     if(data.length === 0) {
         return (
@@ -28,6 +23,7 @@ const Home = () => {
     }
     return (
         <div>
+            <TopComponent />
             <MapCrypto />
         </div>
     )
@@ -38,6 +34,41 @@ const Home = () => {
         //         setLimitRender( prev => prev + 100)
         //     }
         // }
+
+    function showSearch() {
+        searchBar.current.classList.remove('searchOff')
+        searchBar.current.classList.add('searchOn')
+    }
+
+    function closeSearch() {
+        searchBar.current.classList.remove('searchOn')
+        searchBar.current.classList.add('searchOff')
+    }
+
+    function TopComponent() {
+        return(
+            <div className="containerTop">
+                <div className="searchGroup">
+                    <span className="searchIcon1"><BiSearch onClick={ () => showSearch() }/></span>
+                    <form className="searchOff formGroup" ref={ searchBar }>
+                        <span className="searchIcon2"><BiSearch/></span>
+                        <input type="text" className="searchInput" placeholder="Bitcoin"/>
+                        <p onClick={ () => closeSearch() }>Cancel</p>
+                    </form>
+                </div>
+                <div className="currency">
+                    <form>
+                        <select>
+                            <option>USD</option>
+                            <option>EUR</option>
+                            <option>PONEY</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+        )
+    }
+
 
     function MapCrypto() {
         return(
