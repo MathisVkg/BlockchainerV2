@@ -8,8 +8,8 @@ import Home from "./components/Home"
 import User from "./components/User"
 import Details from "./components/pages/Details"
 import './assets/scss/Base.css'
-import Bitcoin from "./components/pages/Bitcoin";
 import SignUp from "./components/pages/SignUp.jsx";
+import SignIn from "./components/pages/SignIn";
 
 export default function App() {
   return (
@@ -22,8 +22,8 @@ export default function App() {
             <Route path="/user">
                 <User />
             </Route>
-            <Route path="/bitcoin">
-                <Bitcoin />
+            <Route path="/sign-in">
+                <SignIn />
             </Route>
             <Route path="/sign-up">
                 <SignUp />
