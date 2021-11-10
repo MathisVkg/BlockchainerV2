@@ -1,6 +1,6 @@
 import axios from "axios";
 import {useState} from "react";
-import './../../assets/scss/Sign.css'
+import './../../assets/scss/Sign.scss'
 import { FaFreebsd } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 

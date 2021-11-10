@@ -7,7 +7,7 @@ import NavBar from "./components/NavBar"
 import Home from "./components/Home"
 import User from "./components/User"
 import Details from "./components/pages/Details"
-import './assets/scss/Base.css'
+import './assets/scss/Base.scss'
 import Bitcoin from "./components/pages/Bitcoin";
 import SignUp from "./components/pages/SignUp.jsx";
 

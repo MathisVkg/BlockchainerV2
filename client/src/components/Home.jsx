@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import axios from "axios"
-import './../assets/scss/Home.css'
+import './../assets/scss/Home.scss'
 import Loader from './Loader'
 import { BsFillTriangleFill } from 'react-icons/bs'
 import { NavLink } from 'react-router-dom'
