@@ -1,0 +1,146 @@
+
+.containerDetails {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-left: 40px;
+  margin-top: 10%;
+  .icon {
+    width: 35px;
+    margin-right: 15px;
+  }
+  .title {
+    font-size: 1.5em;
+    font-weight: 400;
+    width: auto;
+    max-width: 155px;
+    .titleSpan {
+      margin-left: 5px;
+      font-size: 0.8em;
+    }
+  }
+  .rank {
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-left: 15px;
+    background-color: #FFDF00;
+    padding: 2px 10px;
+    border-radius: 4px;
+    color: #1d1d1d;
+  }
+}
+
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 35px;
+  .titlePrice {
+    margin-bottom: 0;
+    color: #FFDF00;
+  }
+  .group {
+    display: flex;
+    align-items: center;
+    .price {
+      margin-top: 0;
+      color: white;
+    }
+  }
+}
+
+.changePriceDetails {
+  margin-left: 15px;
+  width: 85px;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  .changePriceGreenDetails {
+    color: #20ad27;
+    margin-top: 0;
+  }
+  .triangleIconGreenDetails {
+    margin-right: 5px;
+    margin-top: -20px;
+    font-size: 0.5em;
+    color: #20ad27;
+  }
+  .changePriceRedDetails {
+    color: #ce2626;
+    margin-top: 0;
+  }
+  .triangleIconRedDetails {
+    margin-right: 5px;
+    margin-top: -20px;
+    font-size: 0.5em;
+    color: #ce2626;
+    transform: rotate(180deg);
+  }
+}
+
+
+.marketContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 35px;
+  .marketGroup {
+    font-size: 0.9em;
+    height: 60px;
+    .marketTitle {
+      margin-bottom: 0;
+      color: #626262;
+      .infoIcon {
+        margin-left: 5px;
+        &:hover {
+          content: "test";
+        }
+      }
+    }
+    .marketPrice {
+      margin-top: 0;
+      color: white;
+    }
+  }
+}
+
+.insights {
+  margin-top: 15%;
+  margin-bottom: 0;
+  margin-left: 35px;
+  color: white;
+}
+
+.circularGroup {
+  display: flex;
+  flex-direction: column;
+  margin-left: 35px;
+  .circularTitle {
+    color: white;
+    margin-bottom: 0;
+    width: 100px;
+  }
+  .circularBarText {
+    font-size: 0.8em;
+    margin-left: 10px;
+    margin-top: 30px;
+    width: 80px;
+  }
+  .CircularProgressbar {
+    margin-top: 10px;
+    width: 20%;
+    .CircularProgressbar-text {
+      font-size: 1.4em;
+      fill: white;
+      font-weight: 700;
+    }
+    .CircularProgressbar-background {
+      fill: #292929;
+    }
+    .CircularProgressbar-path {
+      stroke: #FFDF00;
+    }
+    .CircularProgressbar-trail {
+      stroke: rgba(248, 217, 33, 0.4);
+    }
+  }
+}
