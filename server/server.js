@@ -10,4 +10,4 @@ const dataRouter = require('./routes/Data')
 app.use('/data', dataRouter)
 
 
-export def
+// export def

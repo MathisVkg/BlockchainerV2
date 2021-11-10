@@ -16,4 +16,10 @@ app.use('/data', dataRouter)
 const detailsRouter = require('./routes/Details')
 app.use('/details', detailsRouter)
 
+const signUpRouter = require('./routes/SignUp')
+app.use('/sign-up', signUpRouter)
+
+const signInRouter = require('./routes/SignIn')
+app.use('/sign-in', signInRouter)
+
 app.listen(process.env.PORT)

@@ -12,11 +12,15 @@ export default function SignUp() {
     async function handleSubmit(e) {
         e.preventDefault()
         try {
-            await axios.post('http://localhost:3001/data/register', {username, email, password})
-            console.log('user created')
+            await axios.post('http://localhost:3001/sign-up', {username, email, password})
         } catch (err) {
             console.log(err)
         }
+    }
+
+    function valueUsername(e) {
+        // this.current.focus()
+        setUsername(e.target.value)
     }
 
     return (
@@ -25,7 +29,6 @@ export default function SignUp() {
             <ContainerForm />
         </>
     )
-
 
     function ContainerInfo() {
         return (
@@ -45,7 +48,7 @@ export default function SignUp() {
                 <form onSubmit={e => handleSubmit(e)} className="formSign">
                     <div className="group">
                         <label htmlFor="username" className="label username">Username</label>
-                        <input onChange={e => setUsername(e.target.value)} type="text" id="username" name="username" placeholder="DarkNetMaster"/>
+                        <input onChange={e => valueUsername(e)} value={username} type="text" id="username" name="username" placeholder="DarkNetMaster"/>
                     </div>
                     <div className="group">
                         <label htmlFor="email" className="label email">Email</label>
@@ -57,7 +60,7 @@ export default function SignUp() {
                     </div>
                     <input type="submit" className="submit"/>
                 </form>
-                <p className="already">Already sign ?<NavLink to="/" className="alreadySpan">Sign in here</NavLink></p>
+                <p className="already">Already sign ?<NavLink to="/user" className="alreadySpan">Sign in here</NavLink></p>
             </div>
         )
     }
