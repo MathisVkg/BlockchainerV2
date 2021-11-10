@@ -103,7 +103,7 @@ const Home = () => {
     }
 
     function getColorChangePrice(crypto) {
-        if(crypto.priceChange1d > 0) {
+        if(crypto.priceChange1d >= 0) {
             return (
                 <>
                     <span className="triangleIconGreen"><BsFillTriangleFill /></span>

@@ -13,7 +13,7 @@
     font-size: 1.5em;
     font-weight: 400;
     width: auto;
-    max-width: 155px;
+    max-width: 165px;
     .titleSpan {
       margin-left: 5px;
       font-size: 0.8em;
@@ -55,28 +55,29 @@
   font-size: 1.1em;
   display: flex;
   align-items: center;
-  .changePriceGreenDetails {
-    color: #20ad27;
-    margin-top: 0;
-  }
-  .triangleIconGreenDetails {
-    margin-right: 5px;
-    margin-top: -20px;
-    font-size: 0.5em;
-    color: #20ad27;
-  }
-  .changePriceRedDetails {
-    color: #ce2626;
-    margin-top: 0;
-  }
-  .triangleIconRedDetails {
-    margin-right: 5px;
-    margin-top: -20px;
-    font-size: 0.5em;
-    color: #ce2626;
-    transform: rotate(180deg);
-  }
 }
+.changePriceGreenDetails {
+  color: #20ad27;
+  margin-top: 0;
+}
+.triangleIconGreenDetails {
+  margin-right: 5px;
+  margin-top: -15px;
+  font-size: 0.5em;
+  color: #20ad27;
+}
+.changePriceRedDetails {
+  color: #ce2626;
+  margin-top: 0;
+}
+.triangleIconRedDetails {
+  margin-right: 5px;
+  margin-top: -20px;
+  font-size: 0.5em;
+  color: #ce2626;
+  transform: rotate(180deg);
+}
+
 
 
 .marketContainer {
@@ -107,13 +108,33 @@
   margin-top: 15%;
   margin-bottom: 0;
   margin-left: 35px;
-  color: white;
+  color: #FFDF00;
+}
+
+
+
+.bonusContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 35px;
+  .priceGroup {
+    display: flex;
+    align-items: center;
+    color: white;
+    .priceTitle {
+      font-size: 0.8em;
+      margin-top: -2px;
+      margin-right: 15px;
+    }
+  }
 }
 
 .circularGroup {
   display: flex;
   flex-direction: column;
-  margin-left: 35px;
+  margin-left: 45px;
+  margin-bottom: 20px;
+  width: 20%;
   .circularTitle {
     color: white;
     margin-bottom: 0;
@@ -127,7 +148,7 @@
   }
   .CircularProgressbar {
     margin-top: 10px;
-    width: 20%;
+    width: 100%;
     .CircularProgressbar-text {
       font-size: 1.4em;
       fill: white;
@@ -140,7 +161,29 @@
       stroke: #FFDF00;
     }
     .CircularProgressbar-trail {
-      stroke: rgba(248, 217, 33, 0.4);
+      stroke: rgba(248, 217, 33, 0.3);
     }
+  }
+}
+
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 120px;
+  margin-left: 35px;
+  .linkTitle {
+    color: #FFDF00;
+  }
+  .linkDes {
+    color: white;
+    width: 80%;
+    .linkDesSpan {
+      color: #FFDF00;
+    }
+  }
+  .link {
+    text-decoration: none;
+    color: white;
+    margin: 5px 0;
   }
 }

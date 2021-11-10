@@ -18,26 +18,21 @@ const Details = () => {
     useEffect(async () => {
         await axios.get("http://localhost:3001/details/" + cryptoid).then((resp) => {
             setData(resp.data.coin)
+
         })
     },[])
-    console.log(data)
+
     return (
         <div>
             <FirstComponent />
             <PriceAverage />
             <MarketCap />
-            { CheckSupply() }
-            <CircularBar />
+            <h2 className="insights">Insights</h2>
+            <BonusInfo />
+            <GetLink />
         </div>
     )
 
-    function CheckSupply() {
-        if(data.totalSupply !== 0) {
-            return(
-                <h2 className="insights">Insights</h2>
-            )
-        }
-    }
 
     function FirstComponent() {
         return (
@@ -57,7 +52,7 @@ const Details = () => {
             <div className="priceContainer">
                 <h2 className="titlePrice">Price of market</h2>
                 <div className="group">
-                    <h2 className="price">${ new Intl.NumberFormat().format(data.price)}</h2>
+                    { GetPrice() }
                     <div className="changePriceDetails">
                         { getColorChangePrice() }
                     </div>
@@ -66,21 +61,11 @@ const Details = () => {
         )
     }
 
-    function getColorChangePrice() {
-        if(data.priceChange1d > 0) {
-            return (
-                <>
-                    <span className="triangleIconGreenDetails"><BsFillTriangleFill /></span>
-                    <p className="changePriceGreenDetails">{ data.priceChange1d + '%' }</p>
-                </>
-            )
+    function GetPrice() {
+        if(data.price < 10) {
+            return <h2 className="price">{ '$' + data.price.toFixed(8)}</h2>
         } else {
-            return (
-                <>
-                    <span className="triangleIconRedDetails"><BsFillTriangleFill /></span>
-                    <p className="changePriceRedDetails">{ data.priceChange1d + '%' }</p>
-                </>
-            )
+            return <h2 className="price">{ '$' + new Intl.NumberFormat().format(data.price)}</h2>
         }
     }
 
@@ -92,14 +77,14 @@ const Details = () => {
                         Market capitalization
                         <span className="infoIcon"><AiOutlineInfoCircle /></span>
                     </p>
-                    <p className="marketPrice">{ new Intl.NumberFormat().format(data.marketCap) }</p>
+                    <p className="marketPrice">{ '$' + new Intl.NumberFormat().format(data.marketCap) }</p>
                 </div>
                 <div className="marketGroup">
                     <p className="marketTitle">
                         Volume in 24h
                         <span className="infoIcon"><AiOutlineInfoCircle /></span>
                     </p>
-                    <p className="marketPrice">{ new Intl.NumberFormat().format(data.volume) }</p>
+                    <p className="marketPrice">{ '$' + new Intl.NumberFormat().format(data.volume) }</p>
                 </div>
                 <div className="marketGroup">
                     <p className="marketTitle">
@@ -131,6 +116,31 @@ const Details = () => {
         }
     }
 
+    function BonusInfo() {
+        return (
+            <div className="bonusContainer">
+                <div className="averagePrice">
+                    <div className="priceGroup">
+                        <p className="priceTitle">Price change 1D</p>
+                        {/*<p className="priceDay">{ data.priceChange1d }</p>*/}
+                        { getColorChangePrice() }
+                    </div>
+                    <div className="priceGroup">
+                        <p className="priceTitle">Price change 1H</p>
+                        {/*<p className="priceHour">{ data.priceChange1h }</p>*/}
+                        { getColorChangePrice1H() }
+                    </div>
+                    <div className="priceGroup">
+                        <p className="priceTitle">Price change 1W</p>
+                        {/*<p className="priceWeek">{ data.priceChange1w }</p>*/}
+                        { getColorChangePrice1W() }
+                    </div>
+                </div>
+                <CircularBar />
+            </div>
+        )
+    }
+
     function CircularBar() {
         const result = Math.trunc(100 * data.availableSupply / data.totalSupply);
         if(data.totalSupply !== 0) {
@@ -151,6 +161,71 @@ const Details = () => {
                 <></>
             )
         }
+    }
+
+    function getColorChangePrice() {
+        if(data.priceChange1d >= 0) {
+            return (
+                <>
+                    <span className="triangleIconGreenDetails"><BsFillTriangleFill /></span>
+                    <p className="changePriceGreenDetails">{ data.priceChange1d + '%' }</p>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <span className="triangleIconRedDetails"><BsFillTriangleFill /></span>
+                    <p className="changePriceRedDetails">{ data.priceChange1d + '%' }</p>
+                </>
+            )
+        }
+    }
+
+    function getColorChangePrice1H() {
+        if(data.priceChange1h >= 0) {
+            return (
+                <>
+                    <span className="triangleIconGreenDetails"><BsFillTriangleFill /></span>
+                    <p className="changePriceGreenDetails">{ data.priceChange1h + '%' }</p>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <span className="triangleIconRedDetails"><BsFillTriangleFill /></span>
+                    <p className="changePriceRedDetails">{ data.priceChange1h + '%' }</p>
+                </>
+            )
+        }
+    }
+
+    function getColorChangePrice1W() {
+        if(data.priceChange1w >= 0) {
+            return (
+                <>
+                    <span className="triangleIconGreenDetails"><BsFillTriangleFill /></span>
+                    <p className="changePriceGreenDetails">{ data.priceChange1w + '%' }</p>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <span className="triangleIconRedDetails"><BsFillTriangleFill /></span>
+                    <p className="changePriceRedDetails">{ data.priceChange1w + '%' }</p>
+                </>
+            )
+        }
+    }
+
+    function GetLink() {
+        return (
+            <div className="linkContainer">
+                <h2 className="linkTitle">Explore</h2>
+                <p className="linkDes">Get more information or actulaty about <span className="linkDesSpan">{ data.name }</span></p>
+                <a href={ data.websiteUrl } className="link websiteUrl" target="_blank">{ data.websiteUrl }</a>
+                <a href={ data.twitterUrl } className="link twitterUrl" target="_blank">{ data.twitterUrl }</a>
+            </div>
+        )
     }
 }
 
