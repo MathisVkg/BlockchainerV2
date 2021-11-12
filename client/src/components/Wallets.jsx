@@ -30,7 +30,7 @@ const Wallets = () => {
     
     function FormConnection() {
         return (
-            <form>
+            <form className="apiForm">
                 <div className="group">
                     <label htmlFor="username" className="label username">API key</label>
                     <input type="text" id="APIKey" name="APIKey" placeholder="API key"/>
