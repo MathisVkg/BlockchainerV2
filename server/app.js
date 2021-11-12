@@ -24,4 +24,7 @@ app.use('/sign-up', signUpRouter)
 const signInRouter = require('./routes/SignIn')
 app.use('/sign-in', signInRouter)
 
+const walletsRouter = require('./routes/Wallets')
+app.use('/wallets', walletsRouter)
+
 app.listen(process.env.PORT)
