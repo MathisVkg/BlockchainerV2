@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './../assets/scss/Wallets.scss'
 import axios from "axios";
 
@@ -7,7 +7,7 @@ const Wallets = () => {
 
     useEffect(async () => {
         await axios.get("http://localhost:3001/wallets").then((resp) => {
-            setData(resp.data)
+            setData(resp)
         })
     },[])
     console.log(data)

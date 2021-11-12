@@ -12,12 +12,4 @@ router.get('/', async function (req, res) {
     return res.send(JSON.stringify(result.data))
 })
 
-// router.post('/register', async function (req, res) {
-//     const data = req.body
-//     console.log(data)
-// })
-
-
-
-
 module.exports = router
