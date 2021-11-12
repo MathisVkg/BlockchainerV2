@@ -21,6 +21,6 @@ router.get('/', async function (req, res) {
     //     }
     // )
     // console.log(result)
-    return res.send(JSON.stringify(result.data))
+    return res.send(result.data)
 })
 module.exports = router
