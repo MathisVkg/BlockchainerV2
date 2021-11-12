@@ -5,9 +5,9 @@ import { FaFreebsd } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 
 export default function SignUp() {
-    const [username, setUsername] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    const [username, setUsername] = useState()
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -45,10 +45,10 @@ export default function SignUp() {
         return (
             <div className="containerTwo">
                 <div className="error">Error</div>
-                <form onSubmit={e => handleSubmit(e)} className="formSign">
+                <form onSubmit={handleSubmit} className="formSign">
                     <div className="group">
                         <label htmlFor="username" className="label username">Username</label>
-                        <input onChange={e => valueUsername(e)} value={username} type="text" id="username" name="username" placeholder="DarkNetMaster"/>
+                        <input  value={username} type="text" id="username" name="username" placeholder="DarkNetMaster"/>
                     </div>
                     <div className="group">
                         <label htmlFor="email" className="label email">Email</label>
