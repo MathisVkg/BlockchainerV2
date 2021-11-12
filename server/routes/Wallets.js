@@ -2,6 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const router = express.Router()
 const { Spot } = require('@binance/connector')
+const {json} = require("express");
 
 router.get('/', async function (req, res) {
 
@@ -10,7 +11,7 @@ router.get('/', async function (req, res) {
     const client = new Spot(apiKey, apiSecret)
 
 // Get account information
-    const result = await client.account().then(response => client.logger.log(response.data))
+    const result = await client.account()//.then(response => client.logger.log(response.data))
 
     // const result = await axios.get('https://api.binance.com/sapi/v1/system/status', {
     //         headers: {
@@ -19,7 +20,7 @@ router.get('/', async function (req, res) {
     //         }
     //     }
     // )
-    console.log(result)
-    return res.send(result)
+    // console.log(result)
+    return res.send(JSON.stringify(result.data))
 })
 module.exports = router
