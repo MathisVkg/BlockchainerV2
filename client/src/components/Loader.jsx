@@ -1,4 +1,4 @@
-import './../assets/scss/Base.css';
+import './../assets/scss/Base.scss';
 
 const Loader = () => {
     return (

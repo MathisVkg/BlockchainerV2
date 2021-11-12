@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import axios from "axios"
-import './../assets/scss/Home.css'
+import './../assets/scss/Home.scss'
 import Loader from './Loader'
 import { BsFillTriangleFill } from 'react-icons/bs'
 import { NavLink } from 'react-router-dom'
@@ -103,7 +103,7 @@ const Home = () => {
     }
 
     function getColorChangePrice(crypto) {
-        if(crypto.priceChange1d > 0) {
+        if(crypto.priceChange1d >= 0) {
             return (
                 <>
                     <span className="triangleIconGreen"><BsFillTriangleFill /></span>

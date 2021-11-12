@@ -1,6 +1,6 @@
 import axios from "axios";
 import {useState} from "react";
-import './../../assets/scss/Sign.css'
+import './../../assets/scss/Sign.scss'
 import { FaFreebsd } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 
@@ -60,7 +60,7 @@ export default function SignUp() {
                     </div>
                     <input type="submit" className="submit"/>
                 </form>
-                <p className="already">Already sign ?<NavLink to="/" className="alreadySpan">Sign in here</NavLink></p>
+                <p className="already">Already sign ?<NavLink to="/user" className="alreadySpan">Sign in here</NavLink></p>
             </div>
         )
     }
