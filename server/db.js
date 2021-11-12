@@ -1,11 +1,18 @@
+const mongoose = require("mongoose")
 const dotenv = require("dotenv")
+const path = require("path");
 dotenv.config()
-const { MongoClient } = require("mongodb")
 
-MongoClient.connect(process.env.CONNECTIONSTRING, function(err, client) {
-    if (err) {
-        console.log(err)
-    }
-    module.exports = client
-    const app = require("./app")
-})
+const UserSchema = require('./models/User')
+const user = new UserSchema({username: 'Peppe', email: 'test@test.tes', password: 'azerty'})
+
+const url = process.env.DB_URI
+
+mongoose.connect(url)
+
+try {
+    user.save()
+
+} catch (err) {
+    console.log(err)
+}
