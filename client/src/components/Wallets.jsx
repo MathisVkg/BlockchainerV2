@@ -12,7 +12,7 @@ const Wallets = () => {
     },[])
     console.log(data)
     return (
-        <div>
+        <div className="walletContainer">
             apiKey<input type="text" name="apiKey"/>
             secretKey<input type="text" name="secretKey"/>
         </div>
