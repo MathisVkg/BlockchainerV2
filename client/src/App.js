@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar"
 import Home from "./components/Home"
 import User from "./components/User"
 import Details from "./components/pages/Details"
+import Wallets from "./components/Wallets"
 import './assets/scss/Base.scss'
 import SignUp from "./components/pages/SignUp.jsx";
 import SignIn from "./components/pages/SignIn";
@@ -30,6 +31,9 @@ export default function App() {
             </Route>
             <Route path="/details/:cryptoid">
                 <Details />
+            </Route>
+            <Route path="/wallets">
+                <Wallets />
             </Route>
           </Switch>
       </Router>
