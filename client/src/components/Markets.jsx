@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import './../assets/scss/Markets.scss'
+import {BsFillTriangleFill} from "react-icons/bs";
 
 const Markets = () => {
     const [data, setData] = useState([])
@@ -17,9 +18,9 @@ const Markets = () => {
 
     return (
         <div>
-            {/*<Ranking />*/}
-            {/*<CalculateTopRanking />*/}
-            {/*<CalculateDownRanking />*/}
+            <Ranking />
+            <CalculateTopRanking />
+            <CalculateDownRanking />
         </div>
     )
 
@@ -33,8 +34,9 @@ const Markets = () => {
                                 topNumber++
                                 return (
                                     <div className="topCard" key={ topCrypto.id + topNumber }>
-                                        <p className="topName">{ topCrypto.name }</p>
-                                        <p className="topValue">{ topCrypto.priceChange1d + '%'}</p>
+                                        <p className="topName">{ topCrypto.name }<span className="nameTopDown">/USDT</span></p>
+                                        <p className="downPrice">{ new Intl.NumberFormat().format(topCrypto.price) }$</p>
+                                        { getColorChangePriceTop(topCrypto) }
                                     </div>
                                 )
                             }
@@ -57,8 +59,9 @@ const Markets = () => {
                                 downNumber++
                                 return (
                                     <div className="downCard" key={ downCrypto.id + downNumber }>
-                                        <p className="nameDown">{ downCrypto.name }</p>
-                                        <p className="downValue">{ downCrypto.priceChange1d + '%' }</p>
+                                        <p className="nameDown">{ downCrypto.name}<span className="nameDownSpan">/USDT</span></p>
+                                        <p className="downPrice">{ new Intl.NumberFormat().format(downCrypto.price) }$</p>
+                                        { getColorChangePriceDown(downCrypto) }
                                     </div>
                                 )
                             }
@@ -79,7 +82,13 @@ const Markets = () => {
                         if(rankingCrypto.rank <= 10)
                         {
                             return (
-                                <p key={ rankingCrypto.id }>{ rankingCrypto.name }</p>
+                                <div className="rankingCard" key={ rankingCrypto.id }>
+                                    <p className="rankNumber">#{ rankingCrypto.rank }</p>
+                                    <img className="rankIcon" src={ rankingCrypto.icon } alt={ rankingCrypto.name }/>
+                                    <p className="rankName">{ rankingCrypto.name }</p>
+                                    <p className="rankPrice">{ new Intl.NumberFormat().format(rankingCrypto.price) }$</p>
+                                    { getColorChangePriceRank(rankingCrypto) }
+                                </div>
                             )
                         }
                     })
@@ -87,6 +96,57 @@ const Markets = () => {
             </div>
         )
     }
+
+
+    function getColorChangePriceRank(rankingCrypto) {
+        if(rankingCrypto.priceChange1d >= 0) {
+            return (
+                <>
+                    <p className="rankPriceGreen">{ rankingCrypto.priceChange1d + '%' }</p>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <p className="rankPriceRed">{ rankingCrypto.priceChange1d + '%' }</p>
+                </>
+            )
+        }
+    }
+
+    function getColorChangePriceTop(topCrypto) {
+        if(topCrypto.priceChange1d >= 0) {
+            return (
+                <>
+                    <p className="topPriceGreen">{ topCrypto.priceChange1d + '%' }</p>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <p className="topPriceRed">{ topCrypto.priceChange1d + '%' }</p>
+                </>
+            )
+        }
+    }
+
+    function getColorChangePriceDown(downCrypto) {
+        if(downCrypto.priceChange1d >= 0) {
+            return (
+                <>
+                    <p className="downPriceGreen">{ downCrypto.priceChange1d + '%' }</p>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <p className="downPriceRed">{ downCrypto.priceChange1d + '%' }</p>
+                </>
+            )
+        }
+    }
+
+
 
 }
 

@@ -1,1 +1,58 @@
 
+.rankPriceGreen {
+  //color: #20ad27;
+  width: 50px;
+  font-size: 0.8em;
+  color: #fff;
+  background-color: #20ad27;
+  padding: 7px 15px;
+  border-radius: 4px;
+}
+.rankPriceRed {
+  //color: #ce2626;
+  width: 50px;
+  font-size: 0.8em;
+  color: #fff;
+  background-color: #ce2626;
+  padding: 7px 15px;
+  border-radius: 4px;
+}
+.topPriceGreen {
+  color: #20ad27;
+}
+.topPriceRed {
+  color: #ce2626;
+}
+.downPriceGreen {
+  color: #20ad27;
+}
+.downPriceRed {
+  color: #ce2626;
+}
+
+
+.containerRanking {
+  margin: 20px;
+  .rankingCard {
+    display: flex;
+    align-items: center;
+    color: white;
+    .rankIcon {
+      width: 25px;
+      margin-right: 10px;
+    }
+    .rankNumber {
+      font-size: 0.8em;
+      text-align: start;
+      margin-right: 10px;
+    }
+    .rankName {
+      width: 115px;
+      font-size: 1.1em;
+    }
+    .rankPrice {
+      text-align: start;
+      width: 130px;
+    }
+  }
+}
