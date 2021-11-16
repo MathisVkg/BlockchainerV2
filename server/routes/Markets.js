@@ -1,15 +1,15 @@
-const axios = require("axios");
-const express = require("express");
-const router = express.Router()
+// const axios = require("axios");
+// const express = require("express");
+// const router = express.Router()
 
-const currency = '&currency=USD'
+// const currency = '&currency=USD'
 
-router.get('/', async function (req, res) {
-    const result = await axios.get('https://api.coinstats.app/public/v1/coins?skip=0&limit=200' + currency, {
-            headers: {}
-        }
-    )
-    return res.send(JSON.stringify(result.data))
-})
+// router.get('/data', async function (req, res) {
+//     const result = await axios.get('https://api.coinstats.app/public/v1/coins?skip=0&limit=200' + currency, {
+//             headers: {}
+//         }
+//     )
+//     return res.send(JSON.stringify(result.data))
+// })
 
-module.exports = router
+// module.exports = router
