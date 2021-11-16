@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './../assets/scss/Wallets.scss'
 import axios from "axios";
+import Loader from './Loader'
 
 const Wallets = () => {
     const [apiKey, setApiKey] = useState('')
@@ -12,22 +13,23 @@ const Wallets = () => {
             setData(resp.data.balances)
         })
     },[])
-    console.log(data)
 
-    // if() {
+    if(data === 0) {
         return (
             <div>
                 <GetApiInfo />
                 <FormConnection />
             </div>
         )
-    // } else {
-    //     return (
-    //         <div>
-    //             coucou
-    //         </div>
-    //     )
-    // }
+    } else {
+        return (
+            <div>
+                <p>coucou</p>
+                {/* <GetCryptoWallet /> */}
+            </div>
+        )
+    }  
+    
 
     function GetApiInfo() {
         return (
@@ -62,6 +64,23 @@ const Wallets = () => {
                 <input type="submit" className="submitButton"/>
             </form>
         )
+    }
+
+    function GetCryptoWallet() {
+        // if(data){
+        //     data.balances.map(userCrypto => {
+        //         if(userCrypto.free <= 0) {
+        //             return <></>
+        //         } else {
+        //             return (
+        //                 <div>
+        //                     <p>{ userCrypto.asset }</p>
+        //                     <p>{ userCrypto.free }</p>
+        //                 </div>
+        //             )
+        //         }
+        //     })
+        // }
     }
 }
 
