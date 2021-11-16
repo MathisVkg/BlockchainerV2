@@ -3,12 +3,13 @@ import './../assets/scss/Wallets.scss'
 import axios from "axios";
 
 const Wallets = () => {
-
+    const [apiKey, setApiKey] = useState('')
+    const [apiSecret, setApiSecret] = useState('')
     const [data, setData] = useState([])
 
     useEffect(async () => {
         await axios.get("http://localhost:3001/wallets").then((resp) => {
-            setData(resp)
+            setData(resp.data.balances)
         })
     },[])
     console.log(data)
@@ -37,17 +38,26 @@ const Wallets = () => {
             </div>
         )
     }
-    
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+        try {
+            await axios.post('http://localhost:3001/wallets/data', {apiKey, apiSecret})
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     function FormConnection() {
         return (
-            <form className="apiForm">
+            <form onSubmit={handleSubmit} className="apiForm">
                 <div className="group">
                     <label htmlFor="username" className="label username">API key</label>
-                    <input type="text" id="APIKey" name="APIKey" placeholder="API key"/>
+                    <input onChange={e => setApiKey(e.target.value)} value={apiKey} type="text" id="APIKey" name="APIKey" placeholder="API key"/>
                 </div>
                 <div className="group">
                     <label htmlFor="password" className="label password">Secret key</label>
-                    <input type="text" id='secretKey' name='secretKey' placeholder="API secret key"/>
+                    <input onChange={e => setApiSecret(e.target.value)} value={apiSecret} type="text" id='secretKey' name='secretKey' placeholder="API secret key"/>
                 </div>
                 <input type="submit" className="submitButton"/>
             </form>

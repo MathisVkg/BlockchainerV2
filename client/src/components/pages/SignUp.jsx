@@ -41,22 +41,26 @@ export default function SignUp() {
         )
     }
 
+    function handleUsername(e) {
+        setUsername(e.target.value)
+    }
+
     function ContainerForm() {
         return (
             <div className="containerTwo">
                 <div className="error">Error</div>
                 <form onSubmit={handleSubmit} className="formSign">
-                    <div className="group">
+                    <div key={'key1'} className="group">
                         <label htmlFor="username" className="label username">Username</label>
-                        <input  value={username} type="text" id="username" name="username" placeholder="DarkNetMaster"/>
+                        <input onChange={handleUsername} value={username} type="text" id="username" name="username" placeholder="DarkNetMaster"/>
                     </div>
-                    <div className="group">
+                    <div key={'key2'} className="group">
                         <label htmlFor="email" className="label email">Email</label>
-                        <input onChange={e => setEmail(e.target.value)} type="email" id="email" name="email" placeholder="darkXxX@gmail.com"/>
+                        <input onChange={e => setEmail(e.target.value)} value={email} type="email" id="email" name="email" placeholder="darkXxX@gmail.com"/>
                     </div>
-                    <div className="group">
+                    <div key={'key3'} className="group">
                         <label htmlFor="password" className="label password">Password</label>
-                        <input onChange={e => setPassword(e.target.value)} type="password" id="password" name="password" placeholder="*********"/>
+                        <input onChange={e => setPassword(e.target.value)} value={password} type="password" id="password" name="password" placeholder="*********"/>
                     </div>
                     <input type="submit" className="submit"/>
                 </form>
