@@ -1,4 +1,11 @@
 
+body {
+  height: 980px;
+}
+.element::-webkit-scrollbar { width: 0 !important }
+.element { overflow: -moz-scrollbars-none; }
+.element { -ms-overflow-style: none; }
+
 .rankPriceGreen {
   width: 35px;
   font-size: 0.8em;
@@ -12,7 +19,7 @@
   font-size: 0.8em;
   color: #fff;
   background-color: #ce2626;
-  padding: 7px 15px;
+  padding: 7px 20px 7px 10px;
   border-radius: 4px;
 }
 .topPriceGreen {
@@ -35,32 +42,35 @@
 .linkMarket {
   text-decoration: none;
 }
-.containerRanking {
+
+
+.rankingCard {
   margin: 20px;
-  .rankingCard {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  .rankIcon {
+    width: 25px;
+    margin-right: 10px;
+  }
+  .rankNumber {
+    font-size: 0.8em;
+    text-align: start;
+    margin-right: 10px;
     color: white;
-    text-decoration: none;
-    .rankIcon {
-      width: 25px;
-      margin-right: 10px;
-    }
-    .rankNumber {
-      font-size: 0.8em;
-      text-align: start;
-      margin-right: 10px;
-    }
-    .rankName {
-      width: 115px;
-      font-size: 1.1em;
-    }
-    .rankPrice {
-      text-align: start;
-      width: 130px;
-    }
+  }
+  .rankName {
+    color: white;
+    width: 115px;
+    font-size: 1.1em;
+  }
+  .rankPrice {
+    text-align: start;
+    width: 130px;
+    color: white;
   }
 }
+
 
 
 .topCard {
@@ -109,5 +119,29 @@
     color: white;
     width: 100px;
     font-size: 0.9em;
+  }
+}
+
+
+.activeMarket {
+  display: block;
+}
+.inactiveMarket {
+  display: none;
+}
+
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+  button {
+    margin: 0 5px;
+    border: unset;
+    padding: 10px 15px;
+    border-radius: 4px;
+    color: #1d1d1d;
+    background-color: #FFDF00;
   }
 }

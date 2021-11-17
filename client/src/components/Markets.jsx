@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import axios from "axios"
 import './../assets/scss/Markets.scss'
 import { NavLink } from 'react-router-dom'
@@ -7,6 +7,9 @@ const Markets = () => {
     const [data, setData] = useState([])
     let topNumber = 0
     let downNumber = 0
+    let rankButton = useRef(null)
+    let topButton = useRef(null)
+    let downButton = useRef(null)
 
     useEffect(async () => {
         await axios.get("http://localhost:3001/data").then((resp) => {
@@ -18,15 +21,58 @@ const Markets = () => {
 
     return (
         <div>
-            {/*<Ranking />*/}
-            {/*<CalculateTopRanking />*/}
-            {/*<CalculateDownRanking />*/}
+            <DisplayButton />
+            <Ranking />
+            <CalculateTopRanking />
+            <CalculateDownRanking />
         </div>
     )
 
+    function DisplayButton() {
+        return (
+            <div className="buttonContainer">
+                <button className="rankButton" onClick={ () => DisplayRank() }>Ranking</button>
+                <button className="bestButton" onClick={ () => DisplayTop() }>Best change</button>
+                <button className="worstButton" onClick={ () => DisplayDown() }>Worst change</button>
+            </div>
+        )
+    }
+
+    function DisplayRank() {
+        rankButton.current.classList.remove('inactiveMarket')
+        rankButton.current.classList.add('activeMarket')
+
+        topButton.current.classList.remove('activeMarket')
+        topButton.current.classList.add('inactiveMarket')
+
+        downButton.current.classList.remove('activeMarket')
+        downButton.current.classList.add('inactiveMarket')
+    }
+    function DisplayTop() {
+        topButton.current.classList.remove('inactiveMarket')
+        topButton.current.classList.add('activeMarket')
+
+        rankButton.current.classList.remove('activeMarket')
+        rankButton.current.classList.add('inactiveMarket')
+
+        downButton.current.classList.remove('activeMarket')
+        downButton.current.classList.add('inactiveMarket')
+    }
+    function DisplayDown() {
+        downButton.current.classList.remove('inactiveMarket')
+        downButton.current.classList.add('activeMarket')
+
+        topButton.current.classList.remove('activeMarket')
+        topButton.current.classList.add('inactiveMarket')
+
+        rankButton.current.classList.remove('activeMarket')
+        rankButton.current.classList.add('inactiveMarket')
+    }
+
+
     function CalculateTopRanking() {
         return (
-            <div className="containerTopChange">
+            <div className="containerTopChange inactiveMarket" ref={ topButton }>
                 {
                     data.map(topCrypto => {
                         if(topNumber < 10) {
@@ -52,7 +98,7 @@ const Markets = () => {
 
     function CalculateDownRanking() {
         return (
-            <div className="containerDownChange">
+            <div className="containerDownChange inactiveMarket" ref={ downButton }>
                 {
                     data.map(downCrypto => {
                         if(downNumber < 10) {
@@ -78,7 +124,7 @@ const Markets = () => {
 
     function Ranking() {
         return (
-            <div className="containerRanking">
+            <div className="containerRanking activeMarket" ref={ rankButton }>
                 {
                     data.map(rankingCrypto => {
                         if(rankingCrypto.rank <= 10)

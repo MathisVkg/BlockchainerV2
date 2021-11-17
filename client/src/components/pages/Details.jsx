@@ -5,11 +5,10 @@ import './../../assets/scss/Details.scss'
 import { BsFillTriangleFill } from 'react-icons/bs'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import {
-    CircularProgressbar,
-    CircularProgressbarWithChildren,
-    buildStyles
+    CircularProgressbar
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css"
+import Loader from './../Loader'
 
 const Details = () => {
     const [data, setData] = useState([])
@@ -22,16 +21,21 @@ const Details = () => {
         })
     },[])
 
-    return (
-        <div>
-            <FirstComponent />
-            <PriceAverage />
-            <MarketCap />
-            <h2 className="insights">Insights</h2>
-            <BonusInfo />
-            <GetLink />
-        </div>
-    )
+    if(data !== 0){
+        return (
+            <div>
+                <FirstComponent />
+                <PriceAverage />
+                <MarketCap />
+                <h2 className="insights">Insights</h2>
+                <BonusInfo />
+                <GetLink />
+            </div>
+        )
+    } else {
+        return <Loader />
+    }
+
 
 
     function FirstComponent() {
