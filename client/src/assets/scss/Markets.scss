@@ -1,6 +1,6 @@
 
-body {
-  height: 980px;
+.marketBody {
+  height: 850px;
 }
 .element::-webkit-scrollbar { width: 0 !important }
 .element { overflow: -moz-scrollbars-none; }
@@ -27,7 +27,7 @@ body {
   font-size: 0.8em;
   color: #fff;
   background-color: #20ad27;
-  padding: 7px 15px;
+  padding: 7px 18px 7px 10px;
   border-radius: 4px;
 }
 .downPriceRed {
@@ -45,7 +45,7 @@ body {
 
 
 .rankingCard {
-  margin: 20px;
+  margin: 10px 20px;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -74,7 +74,7 @@ body {
 
 
 .topCard {
-  margin: 20px;
+  margin: 10px 20px;
   display: flex;
   align-items: center;
   .topIcon {
@@ -99,7 +99,7 @@ body {
 
 
 .downCard {
-  margin: 20px;
+  margin: 10px 20px;
   display: flex;
   align-items: center;
   .downIcon {

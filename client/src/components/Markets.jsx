@@ -20,7 +20,7 @@ const Markets = () => {
     console.log(data)
 
     return (
-        <div>
+        <div className="marketBody">
             <DisplayButton />
             <Ranking />
             <CalculateTopRanking />
