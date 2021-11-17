@@ -14,60 +14,55 @@
     color: white;
     margin-top: 10px;
     margin-bottom: 100px;
+    width: 100%;
     .card {
         display: flex;
         align-items: center;
         margin: 5px 0;
+        margin-left: 15px;
+        width: 100%;
         .rank {
             width: 15px;
             margin-left: 12px;
             text-align: end;
-            p {
-                font-size: 0.8em;
-                color: #5c5c5c;
-            }
+            font-size: 1.1em;
+            color: #5c5c5c;
         }
         .img {
-            width: 35px;
-            margin-top: 5px;
-            margin-left: 20px;
+            width: 45px;
+            margin-left: 10px;
             img {
                 width: 25px;
             }
         }
         .name {
-            width: 90px;
-            font-size: 0.9em;
-            overflow: hidden;
+            width: 125px;
+            font-size: 1.1em;
         }
         .changePrice {
             margin-left: 15px;
-            width: 85px;
+            width: 80px;
             font-size: 0.9em;
             display: flex;
             align-items: center;
             .changePriceGreen {
-                color: #20ad27;
-            }
-            .triangleIconGreen {
-                margin-right: 5px;
-                font-size: 0.5em;
-                color: #20ad27;
+                background-color: #20ad27;
+                padding: 10px 15px;
+                border-radius: 4px;
+                width: 45px;
             }
             .changePriceRed {
-                color: #ce2626;
-            }
-            .triangleIconRed {
-                margin-right: 5px;
-                font-size: 0.5em;
-                color: #ce2626;
-                transform: rotate(180deg);
+                background-color: #ce2626;
+                padding: 10px 15px;
+                border-radius: 4px;
+                width: 45px;
             }
         }
         .price {
             font-size: 0.9em;
             text-align: end;
-            width: 80px;
+            width: 115px;
+            margin-right: 10px;
             .priceGreen {
                 color: #20ad27;
             }
@@ -83,70 +78,26 @@
 
 .containerTop {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
-    .searchIcon1 {
-        position: relative;
-        top: 5px;
-        left: 15px;
-        font-size: 1.4em;
-        color: white;
-    }
     .formGroup {
-        position: fixed;
-        z-index: 10;
-        top: 0;
+        display: flex;
         align-items: center;
         background-color: #292929;
-        padding: 15px 50px;
-        width: 100%;
+        padding: 10px 70px;
         transition: 0.4s ease-in-out;
-        .searchIcon2 {
+        .searchIcon {
             position: relative;
             top: 4px;
-            left: 1px;
             font-size: 1.3em;
             right: 15px;
             color: white;
         }
         .searchInput {
-            margin-left: -45px;
             color: white;
             border-radius: 4px;
-            padding: 7px 15px 7px 55px;
+            padding: 7px 35px 7px 15px;
             border: 1px solid white;
             background-color: unset;
         }
-        p {
-            cursor: pointer;
-            color: #FFDF00;
-            margin: 0;
-            margin-left: 15px;
-            font-size: 1.3em;
-        }
     }
-    .currency {
-        margin-top: 10px;
-        margin-right: 20px;
-        select {
-            background-color: unset;
-            color: white;
-            border-radius: 4px;
-            border: unset;
-            padding: 5px 10px;
-            option {
-                color: #1d1d1d;
-            }
-        }
-    }
-}
-
-.searchOff {
-    transform: translateY(-100%);
-    display: flex;
-}
-.searchOn {
-    transform: translateY(0);
-    display: flex;
 }

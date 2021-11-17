@@ -79,7 +79,7 @@ const Markets = () => {
                             if(topCrypto.priceChange1d > 10) {
                                 topNumber++
                                 return (
-                                    <div className="topCard" key={ topCrypto.id + topNumber }>
+                                    <div className="topCard" key={ topCrypto.id + topNumber + 1 }>
                                         <img src={ topCrypto.icon} alt={ topCrypto.name } className="topIcon"/>
                                         <p className="topName">{ topCrypto.name }<span className="nameTopSpan">/USDT</span></p>
                                         <p className="topPrice">{ new Intl.NumberFormat().format(topCrypto.price) }$</p>
