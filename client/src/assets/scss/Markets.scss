@@ -1,7 +1,6 @@
 
 .rankPriceGreen {
-  //color: #20ad27;
-  width: 50px;
+  width: 35px;
   font-size: 0.8em;
   color: #fff;
   background-color: #20ad27;
@@ -9,8 +8,7 @@
   border-radius: 4px;
 }
 .rankPriceRed {
-  //color: #ce2626;
-  width: 50px;
+  width: 35px;
   font-size: 0.8em;
   color: #fff;
   background-color: #ce2626;
@@ -18,25 +16,32 @@
   border-radius: 4px;
 }
 .topPriceGreen {
-  color: #20ad27;
-}
-.topPriceRed {
-  color: #ce2626;
-}
-.downPriceGreen {
-  color: #20ad27;
+  width: 35px;
+  font-size: 0.8em;
+  color: #fff;
+  background-color: #20ad27;
+  padding: 7px 15px;
+  border-radius: 4px;
 }
 .downPriceRed {
-  color: #ce2626;
+  width: 35px;
+  font-size: 0.8em;
+  color: #fff;
+  background-color: #ce2626;
+  padding: 7px 25px 7px 10px;
+  border-radius: 4px;
 }
 
-
+.linkMarket {
+  text-decoration: none;
+}
 .containerRanking {
   margin: 20px;
   .rankingCard {
     display: flex;
     align-items: center;
     color: white;
+    text-decoration: none;
     .rankIcon {
       width: 25px;
       margin-right: 10px;
@@ -54,5 +59,55 @@
       text-align: start;
       width: 130px;
     }
+  }
+}
+
+
+.topCard {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  .topIcon {
+    width: 25px;
+    margin-right: 10px;
+  }
+  .topName {
+    color: white;
+    width: 165px;
+    .nameTopSpan {
+      margin-left: 5px;
+      color: #5c5c5c;
+      font-size: 0.6em;
+    }
+  }
+  .topPrice {
+    color: white;
+    width: 100px;
+    font-size: 0.9em;
+  }
+}
+
+
+.downCard {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  .downIcon {
+    width: 25px;
+    margin-right: 10px;
+  }
+  .downName {
+    color: white;
+    width: 165px;
+    .nameDownSpan {
+      margin-left: 5px;
+      color: #5c5c5c;
+      font-size: 0.6em;
+    }
+  }
+  .downPrice {
+    color: white;
+    width: 100px;
+    font-size: 0.9em;
   }
 }
