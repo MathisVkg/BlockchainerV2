@@ -36,12 +36,10 @@ const Home = () => {
     function TopComponent() {
         return(
             <div className="containerTop">
-                <div className="searchGroup">
-                    <form className="formGroup" >
-                        <label className="searchIcon"><BiSearch/></label>
-                        <input type="text" className="searchInput" placeholder="Bitcoin"/>
-                    </form>
-                </div>
+                <form className="formGroup" >
+                    <label className="searchIcon"><BiSearch/></label>
+                    <input type="text" className="searchInput" placeholder="Bitcoin"/>
+                </form>
             </div>
         )
     }

@@ -2,9 +2,6 @@
     text-decoration: none;
     color: white; 
     transition: 0.4s ease-in-out;
-    &:hover {
-        background-color: #3a3a3a;
-    }
 }
 
 .containerCrypto {
@@ -14,30 +11,31 @@
     color: white;
     margin-top: 10px;
     margin-bottom: 100px;
-    width: 100%;
     .card {
         display: flex;
         align-items: center;
-        margin: 5px 0;
-        margin-left: 15px;
-        width: 100%;
+        margin: 2.5px 10px;
+        background-color: #212121;
+        border-radius: 4px;
+        transition: 0.4s ease-in-out;
         .rank {
             width: 15px;
-            margin-left: 12px;
-            text-align: end;
-            font-size: 1.1em;
+            margin-left: 8px;
+            text-align: start;
+            font-size: 0.8em;
             color: #5c5c5c;
         }
         .img {
             width: 45px;
-            margin-left: 10px;
+            margin-left: 15px;
+            margin-top: 5px;
             img {
                 width: 25px;
             }
         }
         .name {
             width: 125px;
-            font-size: 1.1em;
+            font-size: 1em;
         }
         .changePrice {
             margin-left: 15px;
@@ -47,15 +45,17 @@
             align-items: center;
             .changePriceGreen {
                 background-color: #20ad27;
-                padding: 10px 15px;
+                padding: 7px 7px 7px 12px;
                 border-radius: 4px;
                 width: 45px;
+                font-size: 0.8em;
             }
             .changePriceRed {
                 background-color: #ce2626;
-                padding: 10px 15px;
+                padding: 7px 7px 7px 12px;
                 border-radius: 4px;
                 width: 45px;
+                font-size: 0.8em;
             }
         }
         .price {
@@ -73,20 +73,23 @@
     }
 }
 
-
+.card:hover {
+    background-color: #2a2a2a;
+    transform: scale(1.03);
+    margin: 10px;
+}
 
 
 .containerTop {
-    display: flex;
-    align-items: center;
     .formGroup {
         display: flex;
         align-items: center;
-        background-color: #292929;
-        padding: 10px 70px;
+        background-color: #212121;
         transition: 0.4s ease-in-out;
+        padding: 12px 0;
         .searchIcon {
             position: relative;
+            left: 25px;
             top: 4px;
             font-size: 1.3em;
             right: 15px;
@@ -95,6 +98,7 @@
         .searchInput {
             color: white;
             border-radius: 4px;
+            margin-left: 35px;
             padding: 7px 35px 7px 15px;
             border: 1px solid white;
             background-color: unset;
