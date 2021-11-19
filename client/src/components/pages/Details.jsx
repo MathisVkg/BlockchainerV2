@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import { useParams } from "react-router-dom"
 import './../../assets/scss/Details.scss'
-import { BsFillTriangleFill } from 'react-icons/bs'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import {
     CircularProgressbar
@@ -24,11 +23,15 @@ const Details = () => {
     if(data !== 0){
         return (
             <div>
-                <FirstComponent />
-                <PriceAverage />
+                <div className="detailsFirstContainer">
+                    <FirstComponent />
+                    <PriceAverage />
+                </div>
                 <MarketCap />
-                <h2 className="insights">Insights</h2>
-                <BonusInfo />
+                <div className="detailsSecondContainer">
+                    <h2 className="insights">Insights</h2>
+                    <BonusInfo />
+                </div>
                 <GetLink />
             </div>
         )
@@ -171,14 +174,12 @@ const Details = () => {
         if(data.priceChange1d >= 0) {
             return (
                 <>
-                    <span className="triangleIconGreenDetails"><BsFillTriangleFill /></span>
                     <p className="changePriceGreenDetails">{ data.priceChange1d + '%' }</p>
                 </>
             )
         } else {
             return (
                 <>
-                    <span className="triangleIconRedDetails"><BsFillTriangleFill /></span>
                     <p className="changePriceRedDetails">{ data.priceChange1d + '%' }</p>
                 </>
             )
@@ -189,14 +190,12 @@ const Details = () => {
         if(data.priceChange1h >= 0) {
             return (
                 <>
-                    <span className="triangleIconGreenDetails"><BsFillTriangleFill /></span>
                     <p className="changePriceGreenDetails">{ data.priceChange1h + '%' }</p>
                 </>
             )
         } else {
             return (
                 <>
-                    <span className="triangleIconRedDetails"><BsFillTriangleFill /></span>
                     <p className="changePriceRedDetails">{ data.priceChange1h + '%' }</p>
                 </>
             )
@@ -207,14 +206,12 @@ const Details = () => {
         if(data.priceChange1w >= 0) {
             return (
                 <>
-                    <span className="triangleIconGreenDetails"><BsFillTriangleFill /></span>
                     <p className="changePriceGreenDetails">{ data.priceChange1w + '%' }</p>
                 </>
             )
         } else {
             return (
                 <>
-                    <span className="triangleIconRedDetails"><BsFillTriangleFill /></span>
                     <p className="changePriceRedDetails">{ data.priceChange1w + '%' }</p>
                 </>
             )
