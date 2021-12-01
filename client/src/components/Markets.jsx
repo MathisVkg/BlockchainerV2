@@ -17,7 +17,7 @@ const Markets = () => {
 
         })
     },[])
-    console.log(data)
+    // console.log(data)
 
     return (
         <div className="marketBody">

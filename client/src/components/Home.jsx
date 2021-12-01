@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import './../assets/scss/Home.scss'
 import Loader from './Loader'
@@ -13,7 +13,7 @@ const Home = () => {
             setData(resp.data)
         })
     },[])
-
+    // console.log(data)
     if(data.length === 0) {
         return (
             <Loader />
@@ -22,6 +22,7 @@ const Home = () => {
     return (
         <div>
             <TopComponent />
+            <CryptoTable />
             <MapCrypto />
         </div>
     )
@@ -44,6 +45,18 @@ const Home = () => {
         )
     }
 
+    function CryptoTable() {
+        return(
+            <div className="containerTable">
+                <p className="rankTable">#</p>
+                <p className="nameTable">Name</p>
+                <p className="changeTable">(24H)</p>
+                <p className="priceTable">Price</p>
+                <p className="priceBtcTable">Price Btc</p>
+                <p className="volumeTable">Volume(24h)</p>
+            </div>
+        )
+    }
 
     function MapCrypto() {
         return(
@@ -52,8 +65,7 @@ const Home = () => {
                     data.coins.map(crypto => {
                         return(
                             <NavLink to={`/details/${ crypto.id }`} className="cardLink" key={ crypto.id } id={ crypto.id } >
-                            <div className="card">
-                                {/*<div className="cardGroupOne">*/}
+                                <div className="card">
                                     <div className="rank">
                                         <p>{ crypto.rank}.</p>
                                     </div>
@@ -63,22 +75,37 @@ const Home = () => {
                                     <div className="name">
                                         <p>{ crypto.name }</p>
                                     </div>
-                                {/*</div>*/}
-                                {/*<div className="cardGroupTwo">*/}
                                     <div className="changePrice">
                                         { getColorChangePrice(crypto) }
                                     </div>
                                     <div className="price">
                                         { getColorPrice(crypto) }
                                     </div>
-                                {/*</div>*/}
-                            </div>
+                                    <div className="priceBtc">
+                                        <p>{ crypto.priceBtc.toFixed(8) }</p>
+                                    </div>
+                                    <div className="priceVolume">
+                                        <p>${ numFormatter(crypto) }</p>
+                                    </div>
+                                </div>
                             </NavLink>
                         )
                     })
                 }
             </div>
         )
+    }
+
+    function numFormatter(crypto) {
+        if(crypto.volume > 999 && crypto.volume < 1000000){
+            return (crypto.volume / 1000).toFixed(1) + 'K'; // convert to K for number from > 1000 < 1 million
+        }else if(crypto.volume > 1000000 && crypto.volume < 1000000000){
+            return (crypto.volume / 1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million
+        }else if(crypto.volume > 1000000000){
+            return (crypto.volume / 1000000000).toFixed(1) + 'B'; // convert to B for number from > 1 billion
+        }else if(crypto.volume < 900){
+            return crypto.volume; // if value < 1000, nothing to do
+        }
     }
 
     function getColorChangePrice(crypto) {

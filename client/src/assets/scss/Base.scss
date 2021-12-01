@@ -75,12 +75,13 @@ body {
     font-size: 1.4em;
 }
 .square {
-    text-align: center;
-    transition: 0.4s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #292929;
-    padding: 48px;
+    height: 20%;
     font-size: 1.5em;
-    transition: 0.4s ease-in-out;
+    transition: 0.3s ease-in-out;
     &:hover {
         background-color: #3a3a3a;
     }
