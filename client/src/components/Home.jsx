@@ -8,33 +8,40 @@ import {FaFreebsd} from "react-icons/fa";
 
 const Home = () => {
     const [data, setData] = useState([])
+    const [timer, setTimer] = useState(false)
+    let timerLoader
 
     useEffect(async () => {
         await axios.get("http://localhost:3001/data").then((resp) => {
             setData(resp.data)
         })
+        timerLoader = setTimeout( () => {
+            setTimer(true)
+        }, 1500)
     },[])
     // console.log(data)
-    if(data.length === 0) {
+
+    if(!timer) {
         return (
             <Loader />
         )
-    }
-    return (
-        <div>
-            <TopComponent />
-            <CryptoTable />
-            <div className="descriptionProduct">
-                <span className="homeIcon"><FaFreebsd /></span>
-                <div className="textGroup">
-                    <p className="title">Welcome to Blockchainer !</p>
-                    <p className="description">The number one crypto tracker. With Blockchainer, you can manage
-                        all of your crypto assets from a single interface</p>
+    } else {
+        return (
+            <div>
+                <TopComponent />
+                <CryptoTable />
+                <div className="descriptionProduct">
+                    <span className="homeIcon"><FaFreebsd /></span>
+                    <div className="textGroup">
+                        <p className="title">Welcome to Blockchainer !</p>
+                        <p className="description">The number one crypto tracker. With Blockchainer, you can manage
+                            all of your crypto assets from a single interface</p>
+                    </div>
                 </div>
+                <MapCrypto />
             </div>
-            <MapCrypto />
-        </div>
-    )
+        )
+    }
 
         // window.onscroll = function(ev) {
         //     if((window.innerHeight + window.scrollY) > document.body.offsetHeight) {

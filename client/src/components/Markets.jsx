@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import axios from "axios"
 import './../assets/scss/Markets.scss'
 import { NavLink } from 'react-router-dom'
+import Loader from "./Loader";
 
 const Markets = () => {
     const [data, setData] = useState([])
@@ -10,23 +11,33 @@ const Markets = () => {
     let rankButton = useRef(null)
     let topButton = useRef(null)
     let downButton = useRef(null)
+    const [timer, setTimer] = useState(false)
+    let timerLoader
 
     useEffect(async () => {
         await axios.get("http://localhost:3001/data").then((resp) => {
             setData(resp.data.coins)
-
         })
+        timerLoader = setTimeout( () => {
+            setTimer(true)
+        }, 1500)
     },[])
     // console.log(data)
 
-    return (
-        <div className="marketBody">
-            <DisplayButton />
-            <Ranking />
-            <CalculateTopRanking />
-            <CalculateDownRanking />
-        </div>
-    )
+    if(!timer) {
+        return (
+            <Loader />
+        )
+    } else {
+        return (
+            <div className="marketBody">
+                <DisplayButton />
+                <Ranking />
+                <CalculateTopRanking />
+                <CalculateDownRanking />
+            </div>
+        )
+    }
 
     function DisplayButton() {
         return (
