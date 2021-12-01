@@ -4,6 +4,7 @@ import './../assets/scss/Home.scss'
 import Loader from './Loader'
 import { NavLink } from 'react-router-dom'
 import { BiSearch } from 'react-icons/bi'
+import {FaFreebsd} from "react-icons/fa";
 
 const Home = () => {
     const [data, setData] = useState([])
@@ -23,13 +24,21 @@ const Home = () => {
         <div>
             <TopComponent />
             <CryptoTable />
+            <div className="descriptionProduct">
+                <span className="homeIcon"><FaFreebsd /></span>
+                <div className="textGroup">
+                    <p className="title">Welcome to Blockchainer !</p>
+                    <p className="description">The number one crypto tracker. With Blockchainer, you can manage
+                        all of your crypto assets from a single interface</p>
+                </div>
+            </div>
             <MapCrypto />
         </div>
     )
 
         // window.onscroll = function(ev) {
         //     if((window.innerHeight + window.scrollY) > document.body.offsetHeight) {
-        //         console.log('cjheck')
+        //         console.log('check')
         //         setLimitRender( prev => prev + 100)
         //     }
         // }
@@ -52,8 +61,6 @@ const Home = () => {
                 <p className="nameTable">Name</p>
                 <p className="changeTable">(24H)</p>
                 <p className="priceTable">Price</p>
-                <p className="priceBtcTable">Price Btc</p>
-                <p className="volumeTable">Volume(24h)</p>
             </div>
         )
     }
@@ -66,25 +73,30 @@ const Home = () => {
                         return(
                             <NavLink to={`/details/${ crypto.id }`} className="cardLink" key={ crypto.id } id={ crypto.id } >
                                 <div className="card">
-                                    <div className="rank">
-                                        <p>{ crypto.rank}.</p>
-                                    </div>
-                                    <div className="img">
-                                        <img src={ crypto.icon } alt={ crypto.name } />
-                                    </div>
-                                    <div className="name">
-                                        <p>{ crypto.name }</p>
-                                    </div>
-                                    <div className="changePrice">
-                                        { getColorChangePrice(crypto) }
+                                    <div className="desktopGroup">
+                                        <div className="rank">
+                                            <p>{ crypto.rank}.</p>
+                                        </div>
+                                        <div className="img">
+                                            <img src={ crypto.icon } alt={ crypto.name } />
+                                        </div>
+                                        <div className="name">
+                                            <p>{ crypto.name.substring(0, 10) }</p>
+                                        </div>
+                                        <div className="changePrice">
+                                            { getColorChangePrice(crypto) }
+                                        </div>
                                     </div>
                                     <div className="price">
+                                        <p className="priceDes">Price:</p>
                                         { getColorPrice(crypto) }
                                     </div>
                                     <div className="priceBtc">
+                                        <p className="priceDes">Price Btc:</p>
                                         <p>{ crypto.priceBtc.toFixed(8) }</p>
                                     </div>
                                     <div className="priceVolume">
+                                        <p className="priceDes">Volume(24H):</p>
                                         <p>${ numFormatter(crypto) }</p>
                                     </div>
                                 </div>
