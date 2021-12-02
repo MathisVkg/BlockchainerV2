@@ -13,7 +13,12 @@
   padding: 15px 2px;
   transition: 0.4s ease-in-out;
 }
-
+.rootDetails {
+  display: block;
+  flex-wrap: unset;
+  margin: unset;
+  width: unset;
+}
 
 .containerDetails {
   display: flex;
@@ -205,25 +210,70 @@
   }
 }
 
+@media only screen and (min-width: 1100px) {
+  .rootDetails {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5% auto 0 auto;
+    width: 45%;
+  }
+  .detailsFirstContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    .containerDetails {
+      margin: 0;
+      font-size: 1.2em;
+      .rank {
+        margin-left: 45px;
+      }
+    }
+    .priceContainer {
+      margin: 0;
+      font-size: 1.2em;
+    }
+  }
+  .marketContainer {
+    width: 335px;
+    font-size: 1.2em;
+    padding-bottom: 35px;
+  }
+  .detailsSecondContainer {
+    width: 400px;
+    height: 230px;
+    .averagePrice {
+      font-size: 1.2em;
+    }
+    .circularGroup {
+      margin-left: 55px;
+      .CircularProgressbar {
+        margin-left: 0;
+      }
+    }
+  }
+  .linkContainer {
+    width: 335px;
+    height: 230px;
+  }
 
-
-//.detailsFirstContainer:hover {
-//  background-color: #2a2a2a;
-//  transform: scale(1.03);
-//  margin: 20px 15px;
-//}
-//.marketContainer:hover {
-//  background-color: #2a2a2a;
-//  transform: scale(1.03);
-//  margin: 20px 15px;
-//}
-//.detailsSecondContainer:hover {
-//  background-color: #2a2a2a;
-//  transform: scale(1.03);
-//  margin: 20px 15px;
-//}
-//.linkContainer:hover {
-//  background-color: #2a2a2a;
-//  transform: scale(1.03);
-//  margin: 20px 15px 120px 15px;
-//}
+  .detailsFirstContainer:hover {
+    background-color: #4d4d4d;
+    transform: scale(1.03);
+  }
+  .marketContainer:hover {
+    background-color: #4d4d4d;
+    transform: scale(1.03);
+    .marketTitle {
+      color: #1d1d1d;
+    }
+  }
+  .detailsSecondContainer:hover {
+    background-color: #4d4d4d;
+    transform: scale(1.03);
+  }
+  .linkContainer:hover {
+    background-color: #4d4d4d;
+    transform: scale(1.03);
+  }
+}

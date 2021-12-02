@@ -12,17 +12,25 @@ import Loader from './../Loader'
 const Details = () => {
     const [data, setData] = useState([])
     const { cryptoid } = useParams()
+    const [timer, setTimer] = useState(false)
+    let timerLoader
 
     useEffect(async () => {
         await axios.get("http://localhost:3001/details/" + cryptoid).then((resp) => {
             setData(resp.data.coin)
-
         })
+        timerLoader = setTimeout( () => {
+            setTimer(true)
+        }, 1500)
     },[])
 
-    if(data !== 0){
+    if(!timer) {
         return (
-            <div>
+            <Loader />
+        )
+    } else {
+        return (
+            <div className="rootDetails">
                 <div className="detailsFirstContainer">
                     <FirstComponent />
                     <PriceAverage />
@@ -35,8 +43,6 @@ const Details = () => {
                 <GetLink />
             </div>
         )
-    } else {
-        return <Loader />
     }
 
 
