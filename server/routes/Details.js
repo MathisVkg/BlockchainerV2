@@ -4,12 +4,11 @@ const router = express.Router()
 
 const currency = '&currency=USD'
 
-router.get('/', async function (req, res) {
-    const result = await axios.get('https://api.coinstats.app/public/v1/coins?skip=0&limit=200' + currency, {
-        headers: {}
-    }
-    )
+router.get('/:cryptoid', async function (req, res) {
+    const crypto = req.params.cryptoid
+    const result = await axios.get(`https://api.coinstats.app/public/v1/coins/${crypto}?currency=USD`)
     return res.send(JSON.stringify(result.data))
 })
+
 
 module.exports = router

@@ -11,6 +11,7 @@ body {
 //NAV
 .navOn {
     transform: translateX(0);
+    z-index: 20;
 }
 .navOff {
     transform: translateX(-100%);
@@ -22,6 +23,20 @@ body {
     right: 20px;
     color: white;
     font-size: 1.4em;
+}
+.showNav {
+    transition: 0.4s ease-in-out;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
 }
 
 
@@ -39,45 +54,51 @@ body {
 }
 
 .navBar {
-    z-index: 20;
     transition: 0.4s ease-in-out;
     position: fixed;
     width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
+    z-index: -1;
     a {
         text-decoration: none;
         color: white;
         text-transform: uppercase;
     }
-    .backIcon {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        color: white;
-        font-size: 1.4em;
-    }
-    .square {
-        text-align: center;
-        transition: 0.4s ease-in-out;
-        background-color: #292929;
-        padding: 48px;
-        font-size: 1.5em;
-    }
-    .Two {
-        transition-delay: 0.1s;
-    }
-    .Three {
-        transition-delay: 0.2s;
-    }
-    .Four {
-        transition-delay: 0.3s;
-    }
-    .Five {
-        transition-delay: 0.4s;
+}
+.backIcon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 1.4em;
+}
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #292929;
+    height: 19.5%;
+    font-size: 1.5em;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        background-color: #4d4d4d;
     }
 }
+.Two {
+    transition-delay: 0.1s;
+}
+.Three {
+    transition-delay: 0.2s;
+}
+.Four {
+    transition-delay: 0.3s;
+}
+.Five {
+    transition-delay: 0.4s;
+}
+
 
 .navBarMobile {
     z-index: 1;
@@ -85,17 +106,18 @@ body {
     margin: 0 auto;
     position: fixed;
     bottom: 0;
-    background-color: #292929;
+    background-color: #212121;
     padding-top: 12px;
     padding-bottom: 13px;
     a {
         text-decoration: none;
+        color: white;
     }
     .group {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 0 10px;
+        margin: 0 15px;
         text-decoration: none;
         color: white;
         .navIcon {
@@ -103,15 +125,12 @@ body {
             margin-bottom: 0;
         }
         p {
-            font-size: 1em;
+            font-size: 0.8em;
             margin-top: -2px;
         }
     }
 }
 
-.active {
-    color: #dd3a1d;
-}
 
 
 
@@ -122,9 +141,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 70%;
     color: white;
-
+    margin-top: 70%;
     animation-name: bounce;
     animation-duration: 2.5s;
     animation-iteration-count: infinite;
@@ -132,25 +150,61 @@ body {
         font-size: 2.5em;
         margin-top: 0;
     }
-    .lds-dual-ring {
-        display: inline-block;
-      }
-      .lds-dual-ring:after {
-        content: " ";
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin: 8px;
+    .loaderIcon {
+        font-size: 7em;
+    }
+    .loaderRing {
+        z-index: -1;
+        position: absolute;
+        top: 215px;
+        width: 200px;
+        height: 200px;
+        border-top: 3px solid #fff;
         border-radius: 50%;
-        border: 3px solid #fff;
-        border-color: #fff transparent #fff transparent;
-        animation: lds-dual-ring 3s linear infinite;
-      }
+
+        animation-name: loading;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+    .loaderRing2 {
+        z-index: -1;
+        position: absolute;
+        top: 190px;
+        width: 250px;
+        height: 250px;
+        border-top: 3px solid #fff;
+        border-radius: 50%;
+
+        animation-name: loading2;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+    .loaderBack {
+        z-index: -2;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+        background-color: #4d4d4d;
+
+        animation: forwards;
+        animation-name: backLoad;
+        animation-duration: 1.5s;
+        animation-iteration-count: 1;
+    }
 }
 
-@keyframes lds-dual-ring {
+@keyframes loading {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+@keyframes loading2 {
+    0% { transform: rotate(-0deg); }
+    100% { transform: rotate(-360deg); }
+}
+@keyframes backLoad {
+    0% { height: 0; }
+    100% { height: 100vh; }
 }
 
 @media only screen and (max-width: 500px) {
@@ -164,4 +218,17 @@ body {
         display: flex;
         justify-content: center;
     }
+}
+
+@media only screen and (min-width: 1100px) {
+    .loader {
+        margin-top: 10%;
+        .loaderRing {
+            top: 140px;
+        }
+        .loaderRing2 {
+            top: 115px;
+        }
+    }
+
 }

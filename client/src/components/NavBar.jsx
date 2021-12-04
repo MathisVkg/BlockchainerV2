@@ -15,6 +15,7 @@ const NavBar = () => {
     const square4 = useRef(null)
     const square5 = useRef(null)
     const iconOpen = useRef(null)
+    const showNav = useRef(null)
     return (
         <>
             <NavDesktop />
@@ -40,6 +41,9 @@ const NavBar = () => {
 
         iconOpen.current.classList.remove('openIcon')
         iconOpen.current.classList.add('removeIcon')
+
+        showNav.current.classList.add('showNav')
+        showNav.current.classList.remove('navBar')
     }
 
     function closeMenu() {
@@ -60,6 +64,9 @@ const NavBar = () => {
 
         iconOpen.current.classList.remove('removeIcon')
         iconOpen.current.classList.add('openIcon')
+
+        showNav.current.classList.remove('showNav')
+        showNav.current.classList.add('navBar')
     }
     
 
@@ -67,22 +74,22 @@ const NavBar = () => {
         return (
             <div>
                 <span className="openIcon" ref={ iconOpen }><GiHamburgerMenu onClick={ () => { openMenu() } }/></span>
-                <nav className="navBar">
+                <nav className="navBar" ref={ showNav }>
                     <div className="square navOff" ref={ square1 }>
                         <span className="backIcon"><FaAngleLeft onClick={ () => { closeMenu() } }/></span>
-                        <NavLink to="/">Home</NavLink>
+                        <NavLink to="/" onClick={ () => { closeMenu() } }>Home</NavLink>
                     </div>
                     <div className="square Two navOff" ref={ square2 }>
-                        <NavLink to="/markets">Markets</NavLink>
+                        <NavLink to="/markets" onClick={ () => { closeMenu() } }>Markets</NavLink>
                     </div>
                     <div className="square Three navOff" ref={ square3 }>
-                        <NavLink to="/trade">Trade</NavLink>
+                        <NavLink to="/trade" onClick={ () => { closeMenu() } }>Trade</NavLink>
                     </div>
                     <div className="square Four navOff" ref={ square4 }>
-                        <NavLink to="/wallets">Wallets</NavLink>
+                        <NavLink to="/wallets" onClick={ () => { closeMenu() } }>Wallets</NavLink>
                     </div>
                     <div className="square Five navOff" ref={ square5 }>
-                        <NavLink to="/user">User</NavLink>
+                        <NavLink to="/user" onClick={ () => { closeMenu() } }>User</NavLink>
                     </div>
                 </nav>
             </div>

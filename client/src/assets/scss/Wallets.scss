@@ -1,0 +1,60 @@
+
+
+.walletContainer {
+    display: flex;
+    flex-direction: column;
+    color: #1d1d1d;
+    padding-left: 35px;
+    padding-top: 25px;
+    background-color: #FFDF00;
+    .title {
+        font-size: 1.3em;
+        width: 85%;
+    }
+    .des {
+        font-size: 1.2em;
+        width: 85%;
+    }
+}
+
+.apiForm {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-top: 35px;
+    margin-left: 25px;
+    .group {
+      display: flex;
+      flex-direction: column;
+      .label {
+        position: relative;
+        top: 10px;
+        left: 15px;
+        font-size: 1.1em;
+        background-color: #1d1d1d;
+        padding: 0 5px;
+      }
+      .username {
+        width: 60px;
+      }
+      .password {
+        width: 85px;
+      }
+      input {
+        color: white;
+        border: 1px solid white;
+        padding: 15px 30px;
+        border-radius: 4px;
+        background-color: unset;
+      }
+    }
+    .submitButton {
+      width: 120px;
+      border-radius: 4px;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
+      color: #1d1d1d;
+    }
+}

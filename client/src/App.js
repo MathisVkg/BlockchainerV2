@@ -6,8 +6,12 @@ import {
 import NavBar from "./components/NavBar"
 import Home from "./components/Home"
 import User from "./components/User"
-import './assets/scss/Base.css'
-import Bitcoin from "./components/pages/Bitcoin";
+import Details from "./components/pages/Details"
+import Wallets from "./components/Wallets"
+import './assets/scss/Base.scss'
+import SignUp from "./components/pages/SignUp.jsx"
+import SignIn from "./components/pages/SignIn"
+import Markets from './components/Markets'
 
 export default function App() {
   return (
@@ -20,8 +24,20 @@ export default function App() {
             <Route path="/user">
                 <User />
             </Route>
-            <Route path="/bitcoin">
-                <Bitcoin />
+            <Route path="/sign-in">
+                <SignIn />
+            </Route>
+            <Route path="/sign-up">
+                <SignUp />
+            </Route>
+            <Route path="/details/:cryptoid">
+                <Details />
+            </Route>
+            <Route path="/wallets">
+                <Wallets />
+            </Route>
+            <Route path="/markets">
+                <Markets />
             </Route>
           </Switch>
       </Router>

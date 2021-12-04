@@ -1,0 +1,283 @@
+
+.detailsFirstContainer {
+  background-color: #212121;
+  border-radius: 4px;
+  margin: 15px;
+  padding: 15px 2px;
+  transition: 0.4s ease-in-out;
+}
+.detailsSecondContainer {
+  background-color: #212121;
+  border-radius: 4px;
+  margin: 15px;
+  padding: 15px 2px;
+  transition: 0.4s ease-in-out;
+}
+.rootDetails {
+  display: block;
+  flex-wrap: unset;
+  margin: unset;
+  width: unset;
+}
+
+.containerDetails {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-left: 25px;
+  .icon {
+    width: 35px;
+    margin-right: 15px;
+  }
+  .title {
+    font-size: 1.5em;
+    font-weight: 400;
+    width: auto;
+    max-width: 165px;
+    .titleSpan {
+      margin-left: 5px;
+      font-size: 0.8em;
+    }
+  }
+  .rank {
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-left: 15px;
+    background-color: #FFDF00;
+    padding: 2px 10px;
+    border-radius: 4px;
+    color: #1d1d1d;
+  }
+}
+
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  .titlePrice {
+    margin-bottom: 0;
+    color: #FFDF00;
+  }
+  .group {
+    display: flex;
+    align-items: center;
+    .price {
+      margin-top: 0;
+      color: white;
+    }
+  }
+}
+
+.changePriceDetails {
+  margin-left: 15px;
+  width: 85px;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+}
+.changePriceGreenDetails {
+  background-color: #20ad27;
+  border-radius: 4px;
+  padding: 5px 7px;
+  margin-top: 0;
+  font-size: 0.8em;
+  color: white;
+}
+.changePriceRedDetails {
+  background-color: #ce2626;
+  border-radius: 4px;
+  padding: 5px 7px;
+  margin-top: 0;
+  font-size: 0.8em;
+  color: white;
+}
+
+
+
+.marketContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #212121;
+  border-radius: 4px;
+  margin: 15px;
+  padding: 15px 2px;
+  transition: 0.4s ease-in-out;
+  .marketGroup {
+    font-size: 0.9em;
+    height: 60px;
+    margin-left: 25px;
+    .marketTitle {
+      margin-bottom: 0;
+      color: #727272;
+      .infoIcon {
+        margin-left: 5px;
+      }
+    }
+    .marketPrice {
+      margin-top: 0;
+      color: white;
+    }
+  }
+}
+
+.insights {
+  margin-bottom: 0;
+  margin-left: 25px;
+  color: #FFDF00;
+}
+
+
+
+.bonusContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  .priceGroup {
+    display: flex;
+    align-items: center;
+    color: white;
+    .priceTitle {
+      font-size: 0.8em;
+      margin-top: -2px;
+      margin-right: 15px;
+    }
+  }
+}
+
+.circularGroup {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  margin-bottom: 20px;
+  width: 20%;
+  .circularTitle {
+    color: white;
+    margin-bottom: 0;
+    width: 100px;
+  }
+  .circularBarText {
+    font-size: 0.8em;
+    margin-left: 10px;
+    margin-top: 30px;
+    width: 80px;
+  }
+  .CircularProgressbar {
+    margin-top: 10px;
+    width: 100%;
+    margin-left: 14px;
+    .CircularProgressbar-text {
+      font-size: 1.4em;
+      fill: white;
+      font-weight: 700;
+    }
+    .CircularProgressbar-background {
+      fill: #292929;
+    }
+    .CircularProgressbar-path {
+      stroke: #FFDF00;
+    }
+    .CircularProgressbar-trail {
+      stroke: rgba(248, 217, 33, 0.3);
+    }
+  }
+}
+
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #212121;
+  border-radius: 4px;
+  margin: 15px 15px 120px 15px;
+  padding: 15px 2px;
+  transition: 0.4s ease-in-out;
+  .linkTitle {
+    color: #FFDF00;
+    margin-left: 25px;
+  }
+  .linkDes {
+    color: white;
+    width: 80%;
+    margin-left: 25px;
+    .linkDesSpan {
+      color: #FFDF00;
+    }
+  }
+  .link {
+    text-decoration: none;
+    color: white;
+    margin: 5px 0 5px 25px;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .rootDetails {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5% auto 0 auto;
+    width: 42%;
+  }
+  .detailsFirstContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    .containerDetails {
+      margin: 0;
+      font-size: 1.2em;
+      .rank {
+        margin-left: 45px;
+      }
+    }
+    .priceContainer {
+      margin: 0;
+      font-size: 1.2em;
+    }
+  }
+  .marketContainer {
+    width: 335px;
+    font-size: 1.2em;
+    padding-bottom: 35px;
+    .marketTitle {
+      transition: 0.3s ease-in-out;
+    }
+  }
+  .detailsSecondContainer {
+    width: 400px;
+    height: 230px;
+    .averagePrice {
+      font-size: 1.2em;
+    }
+    .circularGroup {
+      margin-left: 55px;
+      .CircularProgressbar {
+        margin-left: 0;
+      }
+    }
+  }
+  .linkContainer {
+    width: 335px;
+    height: 230px;
+    margin: 15px;
+  }
+
+  .detailsFirstContainer:hover {
+    background-color: #4d4d4d;
+    transform: scale(1.03);
+  }
+  .marketContainer:hover {
+    background-color: #4d4d4d;
+    transform: scale(1.03);
+    .marketTitle {
+      color: #1d1d1d;
+    }
+  }
+  .detailsSecondContainer:hover {
+    background-color: #4d4d4d;
+    transform: scale(1.03);
+  }
+  .linkContainer:hover {
+    background-color: #4d4d4d;
+    transform: scale(1.03);
+  }
+}
