@@ -20,7 +20,7 @@ const Markets = () => {
         })
         timerLoader = setTimeout( () => {
             setTimer(true)
-        }, 1500)
+        }, 1000)
     },[])
     // console.log(data)
 
