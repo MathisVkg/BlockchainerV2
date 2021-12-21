@@ -74,11 +74,11 @@ const NavBar = () => {
             <div>
                 <nav className="navBar">
                     <div className="yellowBox"></div>
-                    <NavLink to="/" className="firstLink">Home</NavLink>
-                    <NavLink to="/markets">Markets</NavLink>
-                    <NavLink to="/trade">Trade</NavLink>
-                    <NavLink to="/wallets">Wallets</NavLink>
-                    <NavLink to="/user">User</NavLink>
+                    <NavLink to="/" className="firstLink">Home <span>-></span></NavLink>
+                    <NavLink to="/markets">Markets <span>-></span></NavLink>
+                    <NavLink to="/trade">Trade <span>-></span></NavLink>
+                    <NavLink to="/wallets">Wallets <span>-></span></NavLink>
+                    <NavLink to="/user">User <span>-></span></NavLink>
                 </nav>
             </div>
         )
