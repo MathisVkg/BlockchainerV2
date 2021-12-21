@@ -3,17 +3,20 @@ import axios from "axios";
 import { useParams } from "react-router-dom"
 import './../../assets/scss/Details.scss'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
+import { AiOutlineStepBackward } from 'react-icons/ai'
 import {
     CircularProgressbar
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css"
 import Loader from './../Loader'
 
+
 const Details = () => {
     const [data, setData] = useState([])
     const { cryptoid } = useParams()
     const [timer, setTimer] = useState(false)
     let timerLoader
+
 
     useEffect(async () => {
         await axios.get("http://localhost:3001/details/" + cryptoid).then((resp) => {
@@ -28,19 +31,25 @@ const Details = () => {
         return (
             <Loader />
         )
+
     } else {
         return (
-            <div className="rootDetails">
-                <div className="detailsFirstContainer">
-                    <FirstComponent />
-                    <PriceAverage />
+            <div>
+                <div>
+                    <a onClick={() => window.history.back()}><span className="iconBack"><AiOutlineStepBackward /></span></a>
                 </div>
-                <MarketCap />
-                <div className="detailsSecondContainer">
-                    <h2 className="insights">Insights</h2>
-                    <BonusInfo />
+                <div className="rootDetails">
+                    <div className="detailsFirstContainer">
+                        <FirstComponent />
+                        <PriceAverage />
+                    </div>
+                    <MarketCap />
+                    <div className="detailsSecondContainer">
+                        <h2 className="insights">Insights</h2>
+                        <BonusInfo />
+                    </div>
+                    <GetLink />
                 </div>
-                <GetLink />
             </div>
         )
     }

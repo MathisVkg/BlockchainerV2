@@ -19,6 +19,9 @@
   margin: unset;
   width: unset;
 }
+.iconBack {
+  display: none;
+}
 
 .containerDetails {
   display: flex;
@@ -216,6 +219,14 @@
     flex-wrap: wrap;
     margin: 5% auto 0 auto;
     width: 42%;
+  }
+  .iconBack {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 1.5em;
   }
   .detailsFirstContainer {
     display: flex;
