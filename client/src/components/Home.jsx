@@ -3,7 +3,6 @@ import axios from "axios"
 import './../assets/scss/Home.scss'
 import Loader from './Loader'
 import { NavLink } from 'react-router-dom'
-import { BiSearch } from 'react-icons/bi'
 import {FaFreebsd} from "react-icons/fa";
 
 const Home = () => {
@@ -17,7 +16,7 @@ const Home = () => {
         })
         timerLoader = setTimeout( () => {
             setTimer(true)
-        }, 1500)
+        }, 1000)
     },[])
     // console.log(data)
 
@@ -28,7 +27,6 @@ const Home = () => {
     } else {
         return (
             <div>
-                <TopComponent />
                 <CryptoTable />
                 <div className="descriptionProduct">
                     <span className="homeIcon"><FaFreebsd /></span>
@@ -38,6 +36,7 @@ const Home = () => {
                             all of your crypto assets from a single interface</p>
                     </div>
                 </div>
+                <TopComponent />
                 <MapCrypto />
             </div>
         )
@@ -54,8 +53,8 @@ const Home = () => {
         return(
             <div className="containerTop">
                 <form className="formGroup" >
-                    <label className="searchIcon"><BiSearch/></label>
                     <input type="text" className="searchInput" placeholder="Bitcoin"/>
+                    <label className="searchIcon"><span>GO</span></label>
                 </form>
             </div>
         )
