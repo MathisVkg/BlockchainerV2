@@ -43,8 +43,8 @@ const Markets = () => {
         return (
             <div className="buttonContainer">
                 <button className="rankButton" onClick={ () => DisplayRank() }>Ranking</button>
-                <button className="bestButton" onClick={ () => DisplayTop() }>Best change</button>
-                <button className="worstButton" onClick={ () => DisplayDown() }>Worst change</button>
+                <button className="bestButton" onClick={ () => DisplayTop() }>Gainers</button>
+                <button className="worstButton" onClick={ () => DisplayDown() }>Losers</button>
             </div>
         )
     }
@@ -143,11 +143,22 @@ const Markets = () => {
                             return (
                                 <NavLink to={`/details/${ rankingCrypto.id }`} key={ rankingCrypto.id } className="linkMarket">
                                     <div className="rankingCard">
-                                        <p className="rankNumber">#{ rankingCrypto.rank }</p>
-                                        <img className="rankIcon" src={ rankingCrypto.icon } alt={ rankingCrypto.name }/>
-                                        <p className="rankName">{ rankingCrypto.name }</p>
-                                        <p className="rankPrice">{ new Intl.NumberFormat().format(rankingCrypto.price) }$</p>
-                                        { getColorChangePriceRank(rankingCrypto) }
+                                        <div className="nameRankGroup">
+                                            <p className="rankNumber">#{ rankingCrypto.rank }</p>
+                                            <img className="rankIcon" src={ rankingCrypto.icon } alt={ rankingCrypto.name }/>
+                                            <p className="rankName">{ rankingCrypto.symbol }</p>
+                                        </div>
+                                        <div className="priceRankMarketGroup">
+                                            <div>
+                                                <p className="priceDes">Price:</p>
+                                                <p className="rankPrice">{ new Intl.NumberFormat().format(rankingCrypto.price) }$</p>
+                                            </div>
+                                            <div>
+                                                <p className="priceDes">Change(24H):</p>
+                                                { getColorChangePriceRank(rankingCrypto) }
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </NavLink>
                             )
