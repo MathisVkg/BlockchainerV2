@@ -223,7 +223,7 @@
     .componentGlobal {
         display: flex;
         align-items: flex-end;
-        justify-content: center;
+        justify-content: space-around;
         margin: 5% 0;
         .componentLeft {
             display: flex;
@@ -236,7 +236,6 @@
             width: 45%;
         }
     }
-
     .containerCardRanking {
         display: flex;
         align-items: center;
@@ -410,6 +409,7 @@
             flex-direction: column;
             margin-left: 25px;
             transition: 0.3s ease-in-out;
+
             animation: fadeIn forwards;
             animation-iteration-count: 1;
             animation-duration: 1s;
@@ -422,7 +422,8 @@
             .description {
                 margin-top: 0;
                 margin-bottom: 5px;
-                width: 450px;
+                width: 100%;
+                max-width: 90%;
             }
         }
         .homeIcon {

@@ -18,7 +18,6 @@ const Home = () => {
             setTimer(true)
         }, 1000)
     },[])
-    console.log(data)
 
     if(!timer) {
         return (
@@ -63,8 +62,7 @@ const Home = () => {
                     data.coins.map(crypto => {
                         if(crypto.rank < 4) {
                             return (
-                                // <NavLink to={`/details/${ crypto.id }`} className="cardLinkRanking" key={ crypto.id } id={ crypto.id } >
-                                <NavLink to={`/details/${ crypto.id }`} className="cardRankingSet" key={ crypto.id }>
+                                <NavLink to={`/details/${ crypto.id }`} className="cardRankingSet" key={ crypto.id + "key" }>
                                     <div className="cardInfoRanking">
                                         <img src={ crypto.icon } alt={ crypto.name } />
                                         <div className="divClose">
@@ -93,7 +91,6 @@ const Home = () => {
                                         { getColorPrice(crypto) }
                                     </div>
                                 </NavLink>
-                                // </NavLink>
                             )
                         }
                         else {
@@ -134,7 +131,7 @@ const Home = () => {
                     data.coins.map(crypto => {
                         if(crypto.rank < 4) {
                             return (
-                                <NavLink to={`/details/${ crypto.id }`} className="cardLink" key={ crypto.id } id={ crypto.id } >
+                                <NavLink to={`/details/${ crypto.id }`} className="cardLink" key={ crypto.id + "keyop" } id={ crypto.id } >
                                     <div className="trioCard">
                                         <div className="desktopGroup">
                                             <div className="rank">
