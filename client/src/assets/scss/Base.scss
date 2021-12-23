@@ -311,9 +311,20 @@ body {
     }
 }
 
+@media only screen and (min-width: 510px) {
+    .loaderIcon {
+        position: absolute;
+        top: 260px;
+    }
+}
+
 @media only screen and (min-width: 1100px) {
     .loader {
         margin-top: 20%;
+        .loaderIcon {
+            position: absolute;
+            top: 385px;
+        }
         .loaderRing {
             top: 340px;
         }
