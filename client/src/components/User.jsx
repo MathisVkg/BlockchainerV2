@@ -39,7 +39,7 @@ const User = () => {
                     <label htmlFor="password" className="label password">Password</label>
                     <input onChange={e => setPassword(e.target.value)} type="password" id='password' name='password' placeholder="********"/>
                 </div>
-                <input type="submit" className="submitButton"/>
+                <input type="submit" className="submitButton" />
             </form>
             <p className="alreadyAccount">You don't have account ?<NavLink to="/sign-up" className="alreadyAccountSpan">Sign up here</NavLink></p>
         </div>
