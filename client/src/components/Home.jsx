@@ -18,7 +18,7 @@ const Home = () => {
             setTimer(true)
         }, 1000)
     },[])
-    // console.log(data)
+    console.log(data)
 
     if(!timer) {
         return (
@@ -27,16 +27,23 @@ const Home = () => {
     } else {
         return (
             <div>
-                <CryptoTable />
-                <div className="descriptionProduct">
-                    <span className="homeIcon"><FaFreebsd /></span>
-                    <div className="textGroup">
-                        <p className="title">Welcome to Blockchainer !</p>
-                        <p className="description">The number one crypto tracker. With Blockchainer, you can manage
-                            all of your crypto assets from a single interface</p>
+                <div className="componentGlobal">
+                    <div className="componentLeft">
+                        <div className="descriptionProduct">
+                            <span className="homeIcon"><FaFreebsd /></span>
+                            <div className="textGroup">
+                                <p className="title">Welcome to Blockchainer !</p>
+                                <p className="description">The number one crypto tracker. With Blockchainer, you can manage
+                                    all of your crypto assets from a single interface</p>
+                            </div>
+                        </div>
+                        <TopComponent />
+                    </div>
+                    <div className="componentRight">
+                        <CardRanking />
                     </div>
                 </div>
-                <TopComponent />
+                <CryptoTable />
                 <MapCrypto />
             </div>
         )
@@ -48,6 +55,55 @@ const Home = () => {
         //         setLimitRender( prev => prev + 100)
         //     }
         // }
+
+    function CardRanking() {
+        return (
+            <div className="containerCardRanking">
+                {
+                    data.coins.map(crypto => {
+                        if(crypto.rank < 4) {
+                            return (
+                                // <NavLink to={`/details/${ crypto.id }`} className="cardLinkRanking" key={ crypto.id } id={ crypto.id } >
+                                <NavLink to={`/details/${ crypto.id }`} className="cardRankingSet" key={ crypto.id }>
+                                    <div className="cardInfoRanking">
+                                        <img src={ crypto.icon } alt={ crypto.name } />
+                                        <div className="divClose">
+                                            <p className="rank">{ crypto.rank }.</p>
+                                            <p className="name">{ crypto.name }</p>
+                                        </div>
+                                        <div className="divOpen">
+                                            <p className="rank">{ crypto.rank }.</p>
+                                            <p className="name">{ crypto.name }</p>
+                                        </div>
+                                    </div>
+                                    <div className="priceBtc">
+                                        <p className="priceDes">Price Btc:</p>
+                                        <p>{ crypto.priceBtc.toFixed(8) }</p>
+                                    </div>
+                                    <div className="priceVolume">
+                                        <p className="priceDes">Volume(24H):</p>
+                                        <p>${ numFormatter(crypto) }</p>
+                                    </div>
+                                    <div className="changePrice">
+                                        <p className="priceDes">Change(1d):</p>
+                                        <p>{ getColorChangePrice(crypto) }</p>
+                                    </div>
+                                    <div className="price">
+                                        <p className="priceDes">Price:</p>
+                                        { getColorPrice(crypto) }
+                                    </div>
+                                </NavLink>
+                                // </NavLink>
+                            )
+                        }
+                        else {
+                            return <></>
+                        }
+                    })
+                }
+            </div>
+        )
+    }
 
     function TopComponent() {
         return(
@@ -76,38 +132,73 @@ const Home = () => {
             <div className="containerCrypto">
                 {
                     data.coins.map(crypto => {
-                        return(
-                            <NavLink to={`/details/${ crypto.id }`} className="cardLink" key={ crypto.id } id={ crypto.id } >
-                                <div className="card">
-                                    <div className="desktopGroup">
-                                        <div className="rank">
-                                            <p>{ crypto.rank}.</p>
+                        if(crypto.rank < 4) {
+                            return (
+                                <NavLink to={`/details/${ crypto.id }`} className="cardLink" key={ crypto.id } id={ crypto.id } >
+                                    <div className="trioCard">
+                                        <div className="desktopGroup">
+                                            <div className="rank">
+                                                <p>{ crypto.rank}.</p>
+                                            </div>
+                                            <div className="img">
+                                                <img src={ crypto.icon } alt={ crypto.name } />
+                                            </div>
+                                            <div className="name">
+                                                <p>{ crypto.name.substring(0, 10) }</p>
+                                            </div>
+                                            <div className="changePrice">
+                                                { getColorChangePrice(crypto) }
+                                            </div>
                                         </div>
-                                        <div className="img">
-                                            <img src={ crypto.icon } alt={ crypto.name } />
+                                        <div className="price">
+                                            <p className="priceDes">Price:</p>
+                                            { getColorPrice(crypto) }
                                         </div>
-                                        <div className="name">
-                                            <p>{ crypto.name.substring(0, 10) }</p>
+                                        <div className="priceBtc">
+                                            <p className="priceDes">Price Btc:</p>
+                                            <p>{ crypto.priceBtc.toFixed(8) }</p>
                                         </div>
-                                        <div className="changePrice">
-                                            { getColorChangePrice(crypto) }
+                                        <div className="priceVolume">
+                                            <p className="priceDes">Volume(24H):</p>
+                                            <p>${ numFormatter(crypto) }</p>
                                         </div>
                                     </div>
-                                    <div className="price">
-                                        <p className="priceDes">Price:</p>
-                                        { getColorPrice(crypto) }
+                                </NavLink>
+                            )
+                        } else {
+                            return (
+                                <NavLink to={`/details/${ crypto.id }`} className="cardLink" key={ crypto.id } id={ crypto.id } >
+                                    <div className="card">
+                                        <div className="desktopGroup">
+                                            <div className="rank">
+                                                <p>{ crypto.rank}.</p>
+                                            </div>
+                                            <div className="img">
+                                                <img src={ crypto.icon } alt={ crypto.name } />
+                                            </div>
+                                            <div className="name">
+                                                <p>{ crypto.name.substring(0, 10) }</p>
+                                            </div>
+                                            <div className="changePrice">
+                                                { getColorChangePrice(crypto) }
+                                            </div>
+                                        </div>
+                                        <div className="price">
+                                            <p className="priceDes">Price:</p>
+                                            { getColorPrice(crypto) }
+                                        </div>
+                                        <div className="priceBtc">
+                                            <p className="priceDes">Price Btc:</p>
+                                            <p>{ crypto.priceBtc.toFixed(8) }</p>
+                                        </div>
+                                        <div className="priceVolume">
+                                            <p className="priceDes">Volume(24H):</p>
+                                            <p>${ numFormatter(crypto) }</p>
+                                        </div>
                                     </div>
-                                    <div className="priceBtc">
-                                        <p className="priceDes">Price Btc:</p>
-                                        <p>{ crypto.priceBtc.toFixed(8) }</p>
-                                    </div>
-                                    <div className="priceVolume">
-                                        <p className="priceDes">Volume(24H):</p>
-                                        <p>${ numFormatter(crypto) }</p>
-                                    </div>
-                                </div>
-                            </NavLink>
-                        )
+                                </NavLink>
+                            )
+                        }
                     })
                 }
             </div>
